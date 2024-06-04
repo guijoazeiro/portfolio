@@ -5,10 +5,20 @@ const Footer = () => {
     <div className="flex container mx-auto justify-between items-center gap-5 py-4 border-t border-gray-600 flex-wrap px-5 md:px-0 flex-col md:flex-row">
       <p>&copy; 2024 Guilherme Joazeiro</p>
       <div className="flex justify-center items-center gap-5">
-        <FaLinkedin />
-        <FaInstagram />
-        <FaYoutube />
-        <FaGithub />
+        <a
+          href="https://www.linkedin.com/in/guilherme-joazeiro"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/guijoazeiro"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </a>
       </div>
     </div>
   );
