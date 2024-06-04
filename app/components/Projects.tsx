@@ -6,7 +6,7 @@ import Link from "next/link";
 const Projects = () => {
   return (
     <div className="container mx-auto px-5 pb-10 md:px-0" id="projects">
-      <h1 className="underline underline-offset-4 mb-5 text-2xl">Projects</h1>
+      <h1 className="underline underline-offset-4 mb-5 text-2xl">Projetos</h1>
 
       <div className="flex items-center justify-between flex-wrap">
         {projects.map((project) => (

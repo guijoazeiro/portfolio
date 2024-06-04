@@ -3,7 +3,7 @@ import { frontendSkills } from "../../constants/constants";
 const Skills = () => {
   return (
     <div className="container mx-auto px-5 md:px-0 mb-10" id="skills">
-      <h1 className="underline underline-offset-4 mb-5 text-2xl">Skills</h1>
+      <h1 className="underline underline-offset-4 mb-5 text-2xl">Habilidades</h1>
       <div className="flex gap-2 flex-wrap">
         {frontendSkills.map((skill) => (
           <div

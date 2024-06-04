@@ -3,7 +3,7 @@ import { workExperience } from "../../constants/constants";
 const Experience = () => {
   return (
     <div className="container mx-auto p-5 md:p-0" id="experience">
-      <h1 className="underline underline-offset-4 mb-5 text-2xl">Experience</h1>
+      <h1 className="underline underline-offset-4 mb-5 text-2xl">Experiência</h1>
       <div>
         {workExperience.map((experience) => (
           <div
