@@ -1,0 +1,107 @@
+export const links = [
+  { id: 1, href: "/", text: "Home" },
+  { id: 2, href: "#about", text: "Sobre" },
+  { id: 3, href: "#skills", text: "Habilidades" },
+  { id: 4, href: "#experience", text: "Experiência" },
+  { id: 5, href: "#projetos", text: "Projetos" },
+];
+
+export const workExperience = [
+  {
+    id: 1,
+    company: "Adin - Oracle CX",
+    position: "Desenvolvedor Backend",
+    startDate: "Aug 2022",
+    endDate: "Dec 2023",
+    description:
+      "Desenvolvi integrações entre aplicações Node.js e serviços Oracle utilizando Express e NestJS, otimizando o fluxo de dados e a comunicação entre sistemas. Implementei APIs RESTful seguras e eficientes, seguindo as melhores práticas de desenvolvimento. Utilizei Docker para implantação e gerenciamento das aplicações, além de MongoDB e PostgreSQL para armazenamento de dados. Criei testes unitários com Jest e testes end-to-end para assegurar a qualidade das funcionalidades. Automatizei o envio de e-mails personalizados com Python e Pandas, eliminando processos manuais e aumentando a eficiência das campanhas de marketing. No Salesforce, desenvolvi funcionalidades para e-commerce com Node.js, HTML e CSS, melhorando a experiência do cliente e corrigindo bugs para garantir a estabilidade dos projetos.",
+    technologies: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Postgres",
+      "Python",
+      "Pandas",
+      "Salesforce",
+    ],
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: " Comunicação entre Microsserviços. ",
+    technologies: [
+      "Java 11",
+      "Spring Boot",
+      "Javascript",
+      "Node.js",
+      "ES6 Modules",
+      "Express.js",
+      "MongoDB",
+      "API REST",
+      "PostgreSQL",
+      "RabbitMQ",
+      "Docker",
+      "docker-compose",
+      "JWT",
+    ],
+    githubLink: "https://github.com/guijoazeiro/comunicacao-microsservicos",
+  },
+  {
+    id: 2,
+    title: "Papelaria API",
+    technologies: [
+      "Typescript",
+      "Node.js",
+      "Postgres",
+      "AWS S3",
+      "Docker",
+      "JWT",
+      "Swagger",
+    ],
+    githubLink: "https://github.com/guijoazeiro/papelaria-api",
+  },
+  {
+    id: 3,
+    title: "SpotTube",
+    technologies: ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
+    githubLink: "https://github.com/guijoazeiro/spottube",
+  },
+  {
+    
+    id: 4,
+    title: "Portfolio Website",
+    technologies: ["Next.js", "Tailwind"],
+    githubLink: "https://github.com/guijoazeiro/portfolio",
+  },
+];
+
+export const frontendSkills = [
+  "NodeJS ",
+  "Typescript ",
+  "Express ",
+  "Nestjs ",
+  "Java",
+  "Spring Boot ",
+  "PostgreSQL",
+  "MongoDB ",
+  "Docker ",
+  "RabbitMQ ",
+  "Redis ",
+  "Microservices ",
+  "Python ",
+  "Padrões de Design ",
+  "Princípios SOLID ",
+  "Linux ",
+  "Git ",
+  "Visual Studio ",
+  "REST",
+  "TDD ",
+  "Testes Automatizados",
+  "CI/CD ",
+  "Autenticação OAuth ",
+  "JWT ",
+  "Segurança de APIs ",
+  "PM2",
+];
