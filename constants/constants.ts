@@ -3,7 +3,7 @@ export const links = [
   { id: 2, href: "#about", text: "Sobre" },
   { id: 3, href: "#skills", text: "Habilidades" },
   { id: 4, href: "#experience", text: "Experiência" },
-  { id: 5, href: "#projetos", text: "Projetos" },
+  { id: 5, href: "#projects", text: "Projetos" },
 ];
 
 export const workExperience = [
