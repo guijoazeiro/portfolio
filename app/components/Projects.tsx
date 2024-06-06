@@ -1,6 +1,5 @@
 import { projects } from "../../constants/constants";
 import { FiGithub } from "react-icons/fi";
-import { FaLink } from "react-icons/fa6";
 import Link from "next/link";
 
 const Projects = () => {

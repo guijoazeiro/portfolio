@@ -8,7 +8,7 @@ const Skills = () => {
         {frontendSkills.map((skill) => (
           <div
             key={skill}
-            className="border rounded-sm bg-zinc-800 p-1 w-fit border-gray-800 text-sm"
+            className="border rounded-sm bg-zinc-800 p-1 w-fit border-gray-800 text-sm hover:bg-[#93DEFF] hover:bg-opacity-40"
           >
             {skill}
           </div>

@@ -24,7 +24,7 @@ const Experience = () => {
                 {experience.technologies.map((skill) => (
                   <div
                     key={skill}
-                    className="border rounded-sm text-[#93DEFF] bg-[#93DEFF] bg-opacity-10 text-sm p-1 w-fit"
+                    className="border rounded-sm text-white bg-[#93DEFF] bg-opacity-10 text-sm p-1 w-fit hover:bg-opacity-35"
                   >
                     {skill}
                   </div>
