@@ -22,7 +22,7 @@ const Navbar = () => {
             <Link
               href={link.href}
               key={link.id}
-              className="hover:underline underline-offset-2 transition-all hover:text-[#1d9bf0]"
+              className="hover:underline underline-offset-2 transition-all hover:text-[#93DEFF]"
             >
               {link.text}
             </Link>

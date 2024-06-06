@@ -31,10 +31,9 @@ export const projects = [
   {
     id: 1,
     title: " Comunicação entre Microsserviços. ",
+    description: 'Projeto de comunicação entre microsserviços Java e Nodejs',
     technologies: [
-      "Java 11",
       "Spring Boot",
-      "Javascript",
       "Node.js",
       "Express.js",
       "MongoDB",
@@ -48,6 +47,7 @@ export const projects = [
   {
     id: 2,
     title: "Papelaria API",
+    description: 'API de e-commerce feito Nestjs, Postgres e AWS S3',
     technologies: [
       "Typescript",
       "Node.js",
@@ -62,6 +62,7 @@ export const projects = [
   {
     id: 3,
     title: "SpotTube",
+    description: 'API de conversor de playlist do youtube para playlist do spotify',
     technologies: ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
     githubLink: "https://github.com/guijoazeiro/spottube",
   },
@@ -69,6 +70,7 @@ export const projects = [
     
     id: 4,
     title: "Portfolio Website",
+    description: 'Portofóçio desenvolvido com Next.JS e TailwindCSS',
     technologies: ["Next.js", "Tailwind"],
     githubLink: "https://github.com/guijoazeiro/portfolio",
   },

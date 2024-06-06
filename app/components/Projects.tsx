@@ -15,13 +15,14 @@ const Projects = () => {
           >
             <div className="w-full flex items-center justify-end gap-5">
               <Link href={project.githubLink} target="_blank">
-                <FiGithub size={20} />
+                <FiGithub className= 'hover:text-[#93DEFF]'size={20} />
               </Link>
             </div>
             <h3>{project.title.toUpperCase()}</h3>
+            <p className="text-sm text-gray-300">{project.description}</p>
             <div className="flex gap-3 flex-wrap items-center justify-center">
               {project.technologies.map((tech) => (
-                <span className="text-gray-400 text-sm">{tech}</span>
+                <span className="text-gray-400 text-[12px]">{tech}</span>
               ))}
             </div>
           </div>
