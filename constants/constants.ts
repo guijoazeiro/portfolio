@@ -76,7 +76,7 @@ export const projects = [
   },
 ];
 
-export const frontendSkills = [
+export const skills = [
   "NodeJS ",
   "Typescript ",
   "Express ",

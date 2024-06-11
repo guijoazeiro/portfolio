@@ -1,0 +1,94 @@
+{
+  "Navbar": {
+    "home": {
+      "id": 1,
+      "href": "/",
+      "text": "Home"
+    },
+    "about": {
+      "id": 2,
+      "href": "#about",
+      "text": "About"
+    },
+    "skills": {
+      "id": 3,
+      "href": "#skills",
+      "text": "Skills"
+    },
+    "experience": {
+      "id": 4,
+      "href": "#experience",
+      "text": "Experience"
+    },
+    "projects": {
+      "id": 5,
+      "href": "#projects",
+      "text": "Projects"
+    }
+  },
+  "Hero": {
+    "h1": "Hello, I'm",
+    "words": " Backend Developer"
+  },
+  "About": {
+    "h1": "About me",
+    "p1": "I am a Node.js, Java, and Python software developer with over 1 year of experience in web development. I am a dedicated, studious professional, always eager to learn and grow, ready to face any challenge, and contribute effective solutions for the success of the team.",
+    "p2": "I am currently focused on backend development and work with the following technologies: ",
+    "p3": "Node.js (Javascript/Typescript) Framework Express/Nestjs/Fastify Java Spring Python (Pandas, Django) SQL, relational databases (Postgres, MySql, and SQLServer) and non-relational databases (Redis, MongoDB) Unit and integration testing with Node.js and Java Knowledge of microservices, design patterns, DDD, and Clean Code (SOLID), Docker Knowledge of code versioning with GIT, Github, GitLab Basic knowledge of React.js, Angular, HTML, CSS, and JS.",
+    "p4": "I have intermediate-level reading and conversational skills in English."
+  },
+  "Skills": {
+    "h1": "Skills"
+  },
+  "Experience": {
+    "h1": "Experience",
+    "First": {
+      "id": "1",
+      "company": "Adin Oracle CX",
+      "role": "Backend Developer",
+      "startDate": "Aug 2022",
+      "endDate": "Dec 2023",
+      "description": "I developed integrations between Node.js applications and Oracle services using Express and NestJS, optimizing data flow and communication between systems. I implemented secure and efficient RESTful APIs, following best development practices. I used Docker for deploying and managing applications, as well as MongoDB and PostgreSQL for data storage. I created unit tests with Jest and end-to-end tests to ensure the quality of functionalities. I automated the sending of personalized emails with Python and Pandas, eliminating manual processes and increasing the efficiency of marketing campaigns. In Salesforce, I developed e-commerce functionalities with Node.js, HTML, and CSS, improving customer experience and fixing bugs to ensure project stability."
+    }
+  },
+  "Projects": {
+    "h1": "Projects",
+    "First": {
+      "id": "1",
+      "title": " Comunicação entre Microsserviços. ",
+      "description": "Projeto de comunicação entre microsserviços Java e Nodejs",
+      "technologies": [
+        "Spring Boot",
+        "Express.js",
+        "MongoDB",
+        "PostgreSQL",
+        "RabbitMQ",
+        "Docker",
+        "JWT"
+      ],
+      "githubLink": "https://github.com/guijoazeiro/comunicacao-microsservicos"
+    },
+    "Second": {
+      "id": 2,
+      "title": "Papelaria API",
+      "description": "API de e-commerce feito Nestjs, Postgres e AWS S3",
+      "technologies": [
+        "Typescript",
+        "Node.js",
+        "Postgres",
+        "AWS S3",
+        "Docker",
+        "JWT",
+        "Swagger"
+      ],
+      "githubLink": "https://github.com/guijoazeiro/papelaria-api"
+    },
+    "Fourth": {
+      "id": 3,
+      "title": "SpotTube",
+      "description": "API de conversor de playlist do youtube para playlist do spotify",
+      "technologies": ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
+      "githubLink": "https://github.com/guijoazeiro/spottube"
+    }
+  }
+}
