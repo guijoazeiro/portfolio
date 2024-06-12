@@ -1,0 +1,101 @@
+{
+  "Navbar": {
+    "home": {
+      "id": 1,
+      "href": "/",
+      "text": "Home"
+    },
+    "about": {
+      "id": 2,
+      "href": "#about",
+      "text": "Sobre"
+    },
+    "skills": {
+      "id": 3,
+      "href": "#skills",
+      "text": "Habilidades"
+    },
+    "experience": {
+      "id": 4,
+      "href": "#experience",
+      "text": "Experiência"
+    },
+    "projects": {
+      "id": 5,
+      "href": "#projects",
+      "text": "Projetos"
+    }
+  },
+  "Hero": {
+    "h1": "Olá, sou",
+    "words": " Desenvolvedor Backend"
+  },
+  "About": {
+    "h1": "Sobre mim",
+    "p1": "Sou desenvolvedor de software Node.js, Java e Python com mais de 1 ano de experiência na área de desenvolvimento web. Sou um profissional comprometido, estudioso, sempre empenhado em aprender e evoluir, pronto para enfrentar qualquer obstáculo e contribuir com soluções eficazes para o sucesso da equipe.",
+    "p2": "Atualmente estou focado no backend e trabalho com as seguintes tecnologias: ",
+    "p3": "Node.js (Javascript/Typescript) | Framework Express/Nestjs/Fastify | Java Spring | Python (Pandas, Django) | SQL, bancos de dados relacionais (Postgres, MySql e SQLServer) e não relacionais (Redis, MongoDB) | Testes unitários e de integração com Node.js e Java | Noções de microsserviços, design patterns, DDD e Clean Code (SOLID) | Docker | Noções de versionamento de código com GIT, Github, GitLab | Noções básicas de React.js, Angular, NextJS, HTML, CSS e JS.",
+    "p4": "Tenho habilidades de leitura e conversação em inglês em um nível intermediário."
+  },
+  "Skills": {
+    "h1": "Habilidades"
+  },
+  "Experience": {
+    "h1": "Experiência",
+    "First": {
+      "id": "1",
+      "company": "Adin Oracle CX",
+      "role": "Desenvolvedor Backend",
+      "startDate": "Ago 2022",
+      "endDate": "Dez 2023",
+      "description": "Desenvolvi integrações entre aplicações Node.js e serviços Oracle utilizando Express e NestJS, otimizando o fluxo de dados e a comunicação entre sistemas. Implementei APIs RESTful seguras e eficientes, seguindo as melhores práticas de desenvolvimento. Utilizei Docker para implantação e gerenciamento das aplicações, além de MongoDB e PostgreSQL para armazenamento de dados. Criei testes unitários com Jest e testes end-to-end para assegurar a qualidade das funcionalidades. Automatizei o envio de e-mails personalizados com Python e Pandas, eliminando processos manuais e aumentando a eficiência das campanhas de marketing. No Salesforce, desenvolvi funcionalidades para e-commerce com Node.js, HTML e CSS, melhorando a experiência do cliente e corrigindo bugs para garantir a estabilidade dos projetos."
+    }
+  },
+  "Projects": {
+    "h1": "Projetos",
+    "First": {
+      "id": "1",
+      "title": "Comunicação entre Microsserviços.",
+      "description": "Projeto de comunicação entre microsserviços Java e Nodejs",
+      "technologies": [
+        "Spring Boot",
+        "Express.js",
+        "MongoDB",
+        "PostgreSQL",
+        "RabbitMQ",
+        "Docker",
+        "JWT"
+      ],
+      "githubLink": "https://github.com/guijoazeiro/comunicacao-microsservicos"
+    },
+    "Second": {
+      "id": "2",
+      "title": "Papelaria API",
+      "description": "API de e-commerce feito Nestjs, Postgres e AWS S3",
+      "technologies": [
+        "Typescript",
+        "Node.js",
+        "Postgres",
+        "AWS S3",
+        "Docker",
+        "JWT",
+        "Swagger"
+      ],
+      "githubLink": "https://github.com/guijoazeiro/papelaria-api"
+    },
+    "Third": {
+      "id": "3",
+      "title": "SpotTube",
+      "description": "API de conversor de playlist do youtube para playlist do spotify",
+      "technologies": ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
+      "githubLink": "https://github.com/guijoazeiro/spottube"
+    },
+    "Fourth": {
+      "id": "4",
+      "title": "Site de Portfólio",
+      "description": "Portfólio desenvolvido com Next.JS e TailwindCSS",
+      "technologies": ["Next.js", "Tailwind"],
+      "githubLink": "https://github.com/guijoazeiro/portfolio"
+    }
+  }
+}
