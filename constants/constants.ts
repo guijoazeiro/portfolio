@@ -70,7 +70,7 @@ export const projects = [
     
     id: 4,
     title: "Portfolio Website",
-    description: 'Portofóçio desenvolvido com Next.JS e TailwindCSS',
+    description: 'Portfólio desenvolvido com Next.JS e TailwindCSS',
     technologies: ["Next.js", "Tailwind"],
     githubLink: "https://github.com/guijoazeiro/portfolio",
   },

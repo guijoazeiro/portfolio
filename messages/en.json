@@ -55,8 +55,8 @@
     "h1": "Projects",
     "First": {
       "id": "1",
-      "title": " Comunicação entre Microsserviços. ",
-      "description": "Projeto de comunicação entre microsserviços Java e Nodejs",
+      "title": "Communication between Microservices.",
+      "description": "Project for communication between Java and Node.js microservices",
       "technologies": [
         "Spring Boot",
         "Express.js",
@@ -69,9 +69,9 @@
       "githubLink": "https://github.com/guijoazeiro/comunicacao-microsservicos"
     },
     "Second": {
-      "id": 2,
+      "id": "2",
       "title": "Papelaria API",
-      "description": "API de e-commerce feito Nestjs, Postgres e AWS S3",
+      "description": "E-commerce API built with NestJS, Postgres, and AWS S3",
       "technologies": [
         "Typescript",
         "Node.js",
@@ -83,12 +83,19 @@
       ],
       "githubLink": "https://github.com/guijoazeiro/papelaria-api"
     },
-    "Fourth": {
-      "id": 3,
+    "Third": {
+      "id": "3",
       "title": "SpotTube",
-      "description": "API de conversor de playlist do youtube para playlist do spotify",
+      "description": "Playlist converter API from YouTube to Spotify",
       "technologies": ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
       "githubLink": "https://github.com/guijoazeiro/spottube"
+    },
+    "Fourth": {
+      "id": "4",
+      "title": "Portfolio Website",
+      "description": "Portfolio developed with Next.js and TailwindCSS",
+      "technologies": ["Next.js", "Tailwind"],
+      "githubLink": "https://github.com/guijoazeiro/portfolio"
     }
   }
 }
