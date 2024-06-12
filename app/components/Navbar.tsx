@@ -6,6 +6,9 @@ import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import BrazilFlag from "../assets/brazil-flag.png";
+import UsFlag from "../assets/us-flag.png";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -20,7 +23,13 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-14 px-10 flex items-center justify-between backdrop-blur-2xl">
-        <div className="text-3xl">&lt;/&gt;</div>
+        <div className="flex space-x-10">
+          <div className="text-3xl">&lt;/&gt;</div>
+          <div className="left-8 flex space-x-5 mt-1">
+            <Image src={BrazilFlag} className="w-7 h-7 cursor-pointer" alt="Brazil Flag" />
+            <Image src={UsFlag} className="w-7 h-7 cursor-pointer" alt="US Flag" />
+          </div>
+        </div>
         <div className="md:flex items-center justify-center gap-10 hidden">
           {keys.map((link) => (
             <Link
