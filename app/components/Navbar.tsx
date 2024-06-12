@@ -9,10 +9,13 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import BrazilFlag from "../assets/brazil-flag.png";
 import UsFlag from "../assets/us-flag.png";
+import { usePathname, useRouter } from "@/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
   const keys = ["home", "about", "skills", "experience", "projects"] as const;
+  const pathname = usePathname();
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,8 +29,18 @@ const Navbar = () => {
         <div className="flex space-x-10">
           <div className="text-3xl">&lt;/&gt;</div>
           <div className="left-8 flex space-x-5 mt-1">
-            <Image src={BrazilFlag} className="w-7 h-7 cursor-pointer" alt="Brazil Flag" />
-            <Image src={UsFlag} className="w-7 h-7 cursor-pointer" alt="US Flag" />
+            <Image
+              src={BrazilFlag}
+              className="w-7 h-7 cursor-pointer"
+              alt="Brazil Flag"
+              onClick={() => router.push(pathname, { locale: "pt" })}
+            />{" "}
+            <Image
+              src={UsFlag}
+              className="w-7 h-7 cursor-pointer"
+              alt="US Flag"
+              onClick={() => router.push(pathname, { locale: "en" })}
+            />
           </div>
         </div>
         <div className="md:flex items-center justify-center gap-10 hidden">
