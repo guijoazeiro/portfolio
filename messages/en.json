@@ -97,5 +97,10 @@
       "technologies": ["Next.js", "Tailwind"],
       "githubLink": "https://github.com/guijoazeiro/portfolio"
     }
+  },
+  "Contact": {
+    "h1": "Contact",
+    "h2": "Contact me",
+    "h3": "Currently, I am seeking new opportunities and my inbox is open."
   }
 }
