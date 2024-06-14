@@ -25,7 +25,7 @@
       "href": "#projects",
       "text": "Projects"
     },
-    "contact":{
+    "contact": {
       "id": 6,
       "href": "#contact",
       "text": "Contact"
@@ -106,6 +106,9 @@
   "Contact": {
     "h1": "Contact",
     "h2": "Contact me",
-    "h3": "Currently, I am seeking new opportunities and my inbox is open."
+    "h3": "Currently, I am seeking new opportunities and my inbox is open.",
+    "emailName": "Name",
+    "emailAddress": "Email",
+    "emailMessage": "Message"
   }
 }

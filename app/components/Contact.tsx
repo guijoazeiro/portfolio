@@ -43,7 +43,7 @@ const Contact = () => {
         <div className="w-full md:w-[49%] p-5 flex flex-col justify-between items-center mb-5 gap-10">
           <form onSubmit={handleSubmit} className="space-y-4 w-full">
             <div>
-              <h4>Nome</h4>
+              <h4>{t("emailName")}</h4>
               <input
                 id="name"
                 type="text"
@@ -54,7 +54,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <h4>Email</h4>
+              <h4>{t("emailAddress")}</h4>
               <input
                 id="email"
                 type="email"
@@ -65,9 +65,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <h4>
-                Mensagem
-              </h4>
+              <h4>{t("emailMessage")}</h4>
               <textarea
                 id="message"
                 value={message}

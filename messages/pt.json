@@ -106,6 +106,9 @@
   "Contact": {
     "h1": "Contato",
     "h2": "Entre em contato comigo", 
-    "h3":"Atualmente estou em busca de novas oportunidades e minha caixa de entrada está aberta."
+    "h3":"Atualmente estou em busca de novas oportunidades e minha caixa de entrada está aberta.",
+    "emailName": "Nome",
+    "emailAddress": "Email",
+    "emailMessage": "Mensagem"
   }
 }
