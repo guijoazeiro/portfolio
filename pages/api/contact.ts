@@ -4,9 +4,6 @@ import { transporter } from "../../utils/nodemailer";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const { name, email, message } = req.body;
-
-    console.log(req.body)
-
     try {
       await transporter.sendMail({
         from: email,
@@ -18,7 +15,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
       res.status(200).json({ message: "Email enviado com sucesso" });
     } catch (error) {
-      console.log(error);
       res.status(500).json({ error });
     }
   } else {
