@@ -19,7 +19,7 @@ const Hero = () => {
         </h1>
         <div className="flex justify-center space-x-4 relative">
           <a
-            href="/curriculoGuilhermeJoazeiro.pdf"
+            href={`/${t("cvlink")}`}
             download
             className="px-4 py-2 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white rounded-3xl mt-16 inline-flex items-center cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >

@@ -35,7 +35,8 @@
     "h1": "Hello, I'm",
     "words": " Backend Developer",
     "cv": "Download CV",
-    "contact": "Contact"
+    "contact": "Contact",
+    "cvlink": "curriculumGuilhermeJoazeiro.pdf"
   },
   "About": {
     "h1": "About me",
