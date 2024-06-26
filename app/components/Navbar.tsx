@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-14 px-10 flex items-center justify-between backdrop-blur-2xl">
+      <div className="fixed top-0 left-0 w-full h-14 px-10 flex items-center justify-between backdrop-blur-2xl z-20">
         <div className="flex space-x-10">
           <div className="text-3xl">&lt;/&gt;</div>
           <div className="left-8 flex space-x-5 mt-1">
@@ -59,7 +59,7 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="flex fixed top-14 left-0 flex-col justify-around items-center backdrop-blur-2xl w-full h-[calc(100vh-56px)]">
+        <div className="flex fixed top-14 left-0 flex-col justify-around items-center backdrop-blur-2xl w-full h-[calc(100vh-56px)] z-30">
           {keys.map((link) => (
             <Link
               href={t(`${link}.href`)}

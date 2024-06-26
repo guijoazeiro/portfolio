@@ -17,7 +17,7 @@ const Hero = () => {
             />
           </span>
         </h1>
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-4 relative">
           <a
             href="/curriculoGuilhermeJoazeiro.pdf"
             download
