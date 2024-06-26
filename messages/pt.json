@@ -33,7 +33,10 @@
   },
   "Hero": {
     "h1": "Olá, sou",
-    "words": " Desenvolvedor Backend"
+    "words": " Desenvolvedor Backend",
+    "cv": "Baixar CV",
+    "contact": "Contato"
+    
   },
   "About": {
     "h1": "Sobre mim",
