@@ -4,7 +4,7 @@ import { workExperience } from "../../constants/constants";
 const Experience = () => {
   const t = useTranslations("Experience");
   const tr = useTranslations("Experience.First");
-  const keys = ["First"] as const;
+  const keys = ["First", "Second"] as const;
   return (
     <div className="container mx-auto p-5 md:p-0" id="experience">
       <h1 className="underline underline-offset-4 mb-5 text-2xl">{t("h1")}</h1>
@@ -22,7 +22,7 @@ const Experience = () => {
                 {t(`${experience}.company`)} - {t(`${experience}.role`)}
               </h3>
             </div>
-            <div>
+            <div className="flex-3">
               <p className="mb-3 text-gray-400">{t(`${experience}.description`)}</p>
               <div className="flex items-center gap-2 flex-wrap mb-5">
                 {/* {experience.technologies.map((skill) => (

@@ -57,6 +57,14 @@
       "startDate": "Aug 2022",
       "endDate": "Dec 2023",
       "description": "I developed integrations between Node.js applications and Oracle services using Express and NestJS, optimizing data flow and communication between systems. I implemented secure and efficient RESTful APIs, following best development practices. I used Docker for deploying and managing applications, as well as MongoDB and PostgreSQL for data storage. I created unit tests with Jest and end-to-end tests to ensure the quality of functionalities. I automated the sending of personalized emails with Python and Pandas, eliminating manual processes and increasing the efficiency of marketing campaigns. In Salesforce, I developed e-commerce functionalities with Node.js, HTML, and CSS, improving customer experience and fixing bugs to ensure project stability."
+    },
+    "Second": {
+      "id": "2",
+      "company": "TTMS Technologies",
+      "role": "Backend Developer",
+      "startDate": "Aug 2024",
+      "endDate": "Moment",
+      "description": "I work in backend development using JavaScript ES6 and Java (8+), focusing on building efficient and scalable REST APIs. I have experience with the HTTP protocol, relational databases, and optimizing SQL queries. Additionally, I am proficient in Node.js and Express.js for creating robust servers and middleware. I also have knowledge in test automation with Selenium and basic understanding of AWS for cloud solutions."
     }
   },
   "Projects": {
