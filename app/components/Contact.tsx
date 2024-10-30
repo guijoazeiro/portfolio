@@ -36,14 +36,14 @@ const Contact = () => {
     <div className="container mx-auto mb-5 p-5 md:p-0" id="contact">
       <h1 className="underline underline-offset-4 mb-5 text-2xl">{t("h1")}</h1>
       <div className="flex items-center justify-between flex-wrap">
-        <div className=" p-5 w-full md:w-[49%] flex flex-col justify-between items-center mb-5 gap-10">
+        <div className="p-5 w-full md:w-[49%] flex flex-col justify-between items-center mb-5 gap-10">
           <h4>{t("h2")}</h4>
           <p className="text-[16px] text-gray-300">{t("h3")}</p>
         </div>
         <div className="w-full md:w-[49%] p-5 flex flex-col justify-between items-center mb-5 gap-10">
-          <form onSubmit={handleSubmit} className="space-y-4 w-full">
+          <form onSubmit={handleSubmit} className="space-y-4 w-full" aria-labelledby="contact">
             <div>
-              <h4>{t("emailName")}</h4>
+              <label htmlFor="name">{t("emailName")}</label>
               <input
                 id="name"
                 type="text"
@@ -54,7 +54,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <h4>{t("emailAddress")}</h4>
+              <label htmlFor="email">{t("emailAddress")}</label>
               <input
                 id="email"
                 type="email"
@@ -65,7 +65,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <h4>{t("emailMessage")}</h4>
+              <label htmlFor="message">{t("emailMessage")}</label>
               <textarea
                 id="message"
                 value={message}
@@ -86,6 +86,7 @@ const Contact = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Contact;
