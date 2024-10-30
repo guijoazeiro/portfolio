@@ -69,6 +69,7 @@
   },
   "Projects": {
     "h1": "Projects",
+    "ProjectLinkAriaLabel": "Link to project GitHub repository",
     "First": {
       "id": "1",
       "title": "Communication between Microservices.",

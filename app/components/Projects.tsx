@@ -17,7 +17,11 @@ const Projects = () => {
             key={t(`${project}.id`)}
           >
             <div className="w-full flex items-center justify-end gap-5">
-              <Link href={t(`${project}.githubLink`)} target="_blank">
+              <Link 
+              href={t(`${project}.githubLink`)} 
+              target="_blank"
+              aria-label={t("ProjectLinkAriaLabel")}
+              >
                 <FiGithub className="hover:text-[#93DEFF]" size={20} />
               </Link>
             </div>
