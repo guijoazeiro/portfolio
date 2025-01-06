@@ -24,8 +24,8 @@
       "id": 5,
       "href": "#projects",
       "text": "Projetos"
-    }, 
-    "contact":{
+    },
+    "contact": {
       "id": 6,
       "href": "#contact",
       "text": "Contato"
@@ -37,7 +37,6 @@
     "cv": "Baixar CV",
     "contact": "Contato",
     "cvlink": "curriculoGuilhermeJoazeiro.pdf"
-    
   },
   "About": {
     "h1": "Sobre mim",
@@ -67,7 +66,6 @@
       "endDate": "Nov 2024",
       "description": "Atuei como desenvolvedor utilizando Node.js e JavaScript, com foco em arquitetura de microserviços e integração de mensageria, além de trabalhar com MySQL, Docker e AWS. Contribuí para o desenvolvimento e manutenção de APIs REST, criando novos endpoints e funcionalidades, bem como realizando testes automatizados para garantir a qualidade do código. Também fui responsável por solucionar bugs, otimizar processos e gerenciar integrações com serviços AWS, sempre com foco em melhoria contínua e entrega de soluções eficientes."
     }
-
   },
   "Projects": {
     "h1": "Projetos",
@@ -116,11 +114,27 @@
       "technologies": ["Next.js", "Tailwind"],
       "githubLink": "https://github.com/guijoazeiro/portfolio"
     }
-  }, 
+  },
+  "Articles": {
+    "h1": "Artigos",
+    "ArticleLinkAriaLabel": "Link para o artigo",
+    "First": {
+      "id": "1",
+      "title": "Escalando Aplicações Node.js com Clusters",
+      "description": "O artigo aborda como escalar aplicações Node.js utilizando o módulo de clusters para melhorar desempenho e aproveitamento de recursos do servidor.",
+      "linkedinLink": "https://www.linkedin.com/pulse/escalando-aplicações-nodejs-com-clusters-guilherme-joazeiro-draif/"
+    },
+    "Second": {
+      "id": "2",
+      "title": "Proxy reverso: O herói desconhecido da web",
+      "description": "O artigo explica como proxies reversos otimizam a distribuição de tráfego, segurança e balanceamento de carga em aplicações web.",
+      "linkedinLink": "https://www.linkedin.com/pulse/proxy-reverso-o-herói-desconhecido-da-web-guilherme-joazeiro-aebrf/"
+    }
+  },
   "Contact": {
     "h1": "Contato",
-    "h2": "Entre em contato comigo", 
-    "h3":"Atualmente estou em busca de novas oportunidades e minha caixa de entrada está aberta.",
+    "h2": "Entre em contato comigo",
+    "h3": "Atualmente estou em busca de novas oportunidades e minha caixa de entrada está aberta.",
     "emailName": "Nome",
     "emailAddress": "Email",
     "emailMessage": "Mensagem"

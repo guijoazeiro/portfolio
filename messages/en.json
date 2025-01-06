@@ -115,6 +115,21 @@
       "githubLink": "https://github.com/guijoazeiro/portfolio"
     }
   },
+  "Articles": {
+    "h1": "Articles",
+    "First": {
+      "id": "1",
+      "title": "Scaling Node.js Applications with Clusters",
+      "description": "The article discusses how to scale Node.js applications using the cluster module to improve performance and resource utilization of the server.",
+      "linkedinLink": "https://www.linkedin.com/pulse/escalando-aplicações-nodejs-com-clusters-guilherme-joazeiro-draif/"
+    },
+    "Second": {
+      "id": "2",
+      "title": "Reverse Proxy: The Unsung Hero of the Web",
+      "description": "The article explains how reverse proxies optimize traffic distribution, security, and load balancing in web applications.",
+      "linkedinLink": "https://www.linkedin.com/pulse/proxy-reverso-o-herói-desconhecido-da-web-guilherme-joazeiro-aebrf/"
+    }
+  },
   "Contact": {
     "h1": "Contact",
     "h2": "Contact me",
