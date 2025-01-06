@@ -13,7 +13,7 @@ import { usePathname, useRouter } from "@/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
-  const keys = ["home", "about", "skills", "experience", "projects", "contact"] as const;
+  const keys = ["home", "about", "skills", "experience", "projects", "articles", "contact"] as const;
   const pathname = usePathname();
   const router = useRouter();
 
