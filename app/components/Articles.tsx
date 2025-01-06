@@ -27,7 +27,7 @@ const Articles = () => {
                 </Link>
               </div>
               <h3>{t(`${article}.title`).toUpperCase()}</h3>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-gray-300 text-center">
                 {t(`${article}.description`)}
               </p>
 
