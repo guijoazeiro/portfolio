@@ -21,7 +21,7 @@ const Articles = () => {
                 <Link
                   href={t(`${article}.linkedinLink`)}
                   target="_blank"
-                  aria-label={t("articleLinkAriaLabel")}
+                  aria-label={t("ArticleLinkAriaLabel")}
                 >
                   <FiLinkedin className="hover:text-[#93DEFF]" size={20} />
                 </Link>
