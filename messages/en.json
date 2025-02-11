@@ -122,6 +122,7 @@
   },
   "Articles": {
     "h1": "Articles",
+    "ArticleLinkAriaLabel": "Link to article",
     "First": {
       "id": "1",
       "title": "Scaling Node.js Applications with Clusters",
