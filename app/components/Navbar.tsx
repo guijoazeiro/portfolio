@@ -13,7 +13,15 @@ import { usePathname, useRouter } from "@/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
-  const keys = ["home", "about", "skills", "experience", "projects", "articles", "contact"] as const;
+  const keys = [
+    "home",
+    "about",
+    "skills",
+    "experience",
+    "projects",
+    "articles",
+    "contact",
+  ] as const;
   const pathname = usePathname();
   const router = useRouter();
 
@@ -46,8 +54,8 @@ const Navbar = () => {
         <div className="md:flex items-center justify-center gap-10 hidden">
           {keys.map((link) => (
             <Link
+              key={link}
               href={t(`${link}.href`)}
-              // key={t(`${link}.id`)}
               className="hover:underline underline-offset-2 transition-all hover:text-[#93DEFF]"
             >
               {t(`${link}.text`)}
@@ -62,8 +70,8 @@ const Navbar = () => {
         <div className="flex fixed top-14 left-0 flex-col justify-around items-center backdrop-blur-2xl w-full h-[calc(100vh-56px)] z-30">
           {keys.map((link) => (
             <Link
+              key={link}
               href={t(`${link}.href`)}
-              // key={t(`${link}.id`)}
               className="hover:underline underline-offset-2 transition-all hover:text-[] text-2xl"
             >
               {t(`${link}.text`)}
