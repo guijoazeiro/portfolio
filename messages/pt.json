@@ -134,6 +134,12 @@
       "title": "Proxy reverso: O herói desconhecido da web",
       "description": "O artigo explica como proxies reversos otimizam a distribuição de tráfego, segurança e balanceamento de carga em aplicações web.",
       "linkedinLink": "https://www.linkedin.com/pulse/proxy-reverso-o-herói-desconhecido-da-web-guilherme-joazeiro-aebrf/"
+    }, 
+    "Third": {
+      "id": "3",
+      "title": "Otimizando a Performance do Node.js com o Event Loop",
+      "description": "O artigo discute como otimizar a performance de aplicações Node.js utilizando o Event Loop.",
+      "linkedinLink": "https://www.linkedin.com/pulse/otimizando-performance-do-nodejs-com-o-event-loop-guilherme-joazeiro-nw8sf/"
     }
   },
   "Contact": {
