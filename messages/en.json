@@ -56,12 +56,12 @@
   "Experience": {
     "h1": "Experience",
     "First": {
-      "id": "1",
-      "company": "Adin Oracle CX",
+      "id": "3",
+      "company": "Greens Pharmaceutical Corp",
       "role": "Backend Developer",
-      "startDate": "Aug 2022",
-      "endDate": "Dec 2023",
-      "description": "I developed integrations between Node.js applications and Oracle services using Express and NestJS, optimizing data flow and communication between systems. I implemented secure and efficient RESTful APIs, following best development practices. I used Docker for deploying and managing applications, as well as MongoDB and PostgreSQL for data storage. I created unit tests with Jest and end-to-end tests to ensure the quality of functionalities. I automated the sending of personalized emails with Python and Pandas, eliminating manual processes and increasing the efficiency of marketing campaigns. In Salesforce, I developed e-commerce functionalities with Node.js, HTML, and CSS, improving customer experience and fixing bugs to ensure project stability."
+      "startDate": "Set 2025",
+      "endDate": "Present",
+      "description": "I work as a backend developer, providing technical leadership and defining system architecture, SQL modeling, technology stack, and solution feasibility. I develop new features for the inventory system using Python and Flask, and I initiated and lead the development of the internal system with Node.js and TypeScript. I structured the version control workflow using GitHub, adopting pull requests and best practices. I implemented automations with n8n, WhatsApp, and OpenAI, focusing on integrations and database persistence. I configured VPS environments on Ubuntu and NGINX for application deployment. I also set up the AWS environment using EC2, RDS (PostgreSQL), S3, and ECR, along with CI/CD pipelines using GitHub Actions to automate build, deployment, and application versioning. Additionally, I am responsible for translating requirements into tasks, organizing the workflow in Trello, reviewing pull requests, and mentoring the backend team."
     },
     "Second": {
       "id": "2",
@@ -70,6 +70,14 @@
       "startDate": "Aug 2024",
       "endDate": "Nov 2024",
       "description": "I worked as a developer using Node.js and JavaScript, with a focus on microservices architecture and message integration, as well as working with MySQL, Docker, AWS, and Linux. I contributed to the development and maintenance of REST APIs, creating new endpoints and features, as well as performing automated testing to ensure code quality. I was also responsible for debugging, optimizing processes, and managing integrations with AWS services, always aiming for continuous improvement and efficient solution delivery."
+    },
+    "Third": {
+      "id": "1",
+      "company": "Adin Oracle CX",
+      "role": "Backend Developer",
+      "startDate": "Aug 2022",
+      "endDate": "Dec 2023",
+      "description": "I developed integrations between Node.js applications and Oracle services using Express and NestJS, optimizing data flow and communication between systems. I implemented secure and efficient RESTful APIs, following best development practices. I used Docker for deploying and managing applications, as well as MongoDB and PostgreSQL for data storage. I created unit tests with Jest and end-to-end tests to ensure the quality of functionalities. I automated the sending of personalized emails with Python and Pandas, eliminating manual processes and increasing the efficiency of marketing campaigns. In Salesforce, I developed e-commerce functionalities with Node.js, HTML, and CSS, improving customer experience and fixing bugs to ensure project stability."
     }
   },
   "Projects": {
@@ -109,14 +117,23 @@
       "id": "3",
       "title": "SpotTube",
       "description": "Playlist converter API from YouTube to Spotify",
-      "technologies": ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
+      "technologies": [
+        "Typescript",
+        "Node.js",
+        "Postgres",
+        "JWT",
+        "Swagger"
+      ],
       "githubLink": "https://github.com/guijoazeiro/spottube"
     },
     "Fourth": {
       "id": "4",
       "title": "Portfolio Website",
       "description": "Portfolio developed with Next.js and TailwindCSS",
-      "technologies": ["Next.js", "Tailwind"],
+      "technologies": [
+        "Next.js",
+        "Tailwind"
+      ],
       "githubLink": "https://github.com/guijoazeiro/portfolio"
     }
   },

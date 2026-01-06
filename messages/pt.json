@@ -56,12 +56,12 @@
   "Experience": {
     "h1": "Experiência",
     "First": {
-      "id": "1",
-      "company": "Adin Oracle CX",
+      "id": "3",
+      "company": "Greens Pharmaceutical Corp",
       "role": "Desenvolvedor Backend",
-      "startDate": "Ago 2022",
-      "endDate": "Dez 2023",
-      "description": "Desenvolvi integrações entre aplicações Node.js e serviços Oracle utilizando Express e NestJS, otimizando o fluxo de dados e a comunicação entre sistemas. Implementei APIs RESTful seguras e eficientes, seguindo as melhores práticas de desenvolvimento. Utilizei Docker para implantação e gerenciamento das aplicações, além de MongoDB e PostgreSQL para armazenamento de dados. Criei testes unitários com Jest e testes end-to-end para assegurar a qualidade das funcionalidades. Automatizei o envio de e-mails personalizados com Python e Pandas, eliminando processos manuais e aumentando a eficiência das campanhas de marketing. No Salesforce, desenvolvi funcionalidades para e-commerce com Node.js, HTML e CSS, melhorando a experiência do cliente e corrigindo bugs para garantir a estabilidade dos projetos."
+      "startDate": "Set 2025",
+      "endDate": "o momento",
+      "description": "Atuo como desenvolvedor backend, liderando tecnicamente a área e definindo arquitetura, modelagem SQL, tecnologias e viabilidade das soluções. Desenvolvo novas features no sistema de estoque utilizando Python e Flask, além de iniciar e liderar o desenvolvimento do sistema interno com Node.js e TypeScript. Estruturei o fluxo de versionamento com GitHub, adotando PRs e boas práticas de código. Implementei automações com n8n, WhatsApp e OpenAI, com foco em integrações e persistência em banco de dados. Configurei VPS em Ubuntu e NGINX para deploy das aplicações. Atuei na configuração do ambiente AWS com EC2, RDS (PostgreSQL), S3 e ECR, além de pipelines de CI/CD com GitHub Actions, automatizando build, deploy e versionamento. Também sou responsável por transformar requisitos em tarefas, organizar o fluxo no Trello, revisar PRs e orientar o time backend."
     },
     "Second": {
       "id": "2",
@@ -70,6 +70,14 @@
       "startDate": "Ago 2024",
       "endDate": "Nov 2024",
       "description": "Atuei como desenvolvedor utilizando Node.js e JavaScript, com foco em arquitetura de microserviços e integração de mensageria, além de trabalhar com MySQL, Docker e AWS. Contribuí para o desenvolvimento e manutenção de APIs REST, criando novos endpoints e funcionalidades, bem como realizando testes automatizados para garantir a qualidade do código. Também fui responsável por solucionar bugs, otimizar processos e gerenciar integrações com serviços AWS, sempre com foco em melhoria contínua e entrega de soluções eficientes."
+    },
+    "Third": {
+      "id": "1",
+      "company": "Adin Oracle CX",
+      "role": "Desenvolvedor Backend",
+      "startDate": "Ago 2022",
+      "endDate": "Dez 2023",
+      "description": "Desenvolvi integrações entre aplicações Node.js e serviços Oracle utilizando Express e NestJS, otimizando o fluxo de dados e a comunicação entre sistemas. Implementei APIs RESTful seguras e eficientes, seguindo as melhores práticas de desenvolvimento. Utilizei Docker para implantação e gerenciamento das aplicações, além de MongoDB e PostgreSQL para armazenamento de dados. Criei testes unitários com Jest e testes end-to-end para assegurar a qualidade das funcionalidades. Automatizei o envio de e-mails personalizados com Python e Pandas, eliminando processos manuais e aumentando a eficiência das campanhas de marketing. No Salesforce, desenvolvi funcionalidades para e-commerce com Node.js, HTML e CSS, melhorando a experiência do cliente e corrigindo bugs para garantir a estabilidade dos projetos."
     }
   },
   "Projects": {
@@ -109,14 +117,23 @@
       "id": "3",
       "title": "SpotTube",
       "description": "API de conversor de playlist do youtube para playlist do spotify",
-      "technologies": ["Typescript", "Node.js", "Postgres", "JWT", "Swagger"],
+      "technologies": [
+        "Typescript",
+        "Node.js",
+        "Postgres",
+        "JWT",
+        "Swagger"
+      ],
       "githubLink": "https://github.com/guijoazeiro/spottube"
     },
     "Fourth": {
       "id": "4",
       "title": "Site de Portfólio",
       "description": "Portfólio desenvolvido com Next.JS e TailwindCSS",
-      "technologies": ["Next.js", "Tailwind"],
+      "technologies": [
+        "Next.js",
+        "Tailwind"
+      ],
       "githubLink": "https://github.com/guijoazeiro/portfolio"
     }
   },
@@ -134,7 +151,7 @@
       "title": "Proxy reverso: O herói desconhecido da web",
       "description": "O artigo explica como proxies reversos otimizam a distribuição de tráfego, segurança e balanceamento de carga em aplicações web.",
       "linkedinLink": "https://www.linkedin.com/pulse/proxy-reverso-o-herói-desconhecido-da-web-guilherme-joazeiro-aebrf/"
-    }, 
+    },
     "Third": {
       "id": "3",
       "title": "Otimizando a Performance do Node.js com o Event Loop",

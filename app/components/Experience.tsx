@@ -4,7 +4,7 @@ import { workExperience } from "../../constants/constants";
 const Experience = () => {
   const t = useTranslations("Experience");
   const tr = useTranslations("Experience.First");
-  const keys = ["First", "Second"] as const;
+  const keys = ["First", "Second", "Third"] as const;
   return (
     <div className="container mx-auto p-5 md:p-0" id="experience">
       <h1 className="underline underline-offset-4 mb-5 text-2xl">{t("h1")}</h1>
@@ -14,7 +14,7 @@ const Experience = () => {
             className="flex flex-wrap gap-2 mb-3 flex-col md:flex-row"
             key={t(`${experience}.id`)}
           >
-            <div className="w-[170px] text-gray-400">
+            <div className="w-[180px] text-gray-400">
               {t(`${experience}.startDate`)} - {t(`${experience}.endDate`)}
             </div>
             <div className="flex-1">
