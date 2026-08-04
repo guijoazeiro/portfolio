@@ -5,28 +5,31 @@ const Projects = () => {
   const keys = ["First", "Second", "Third", "Fourth"] as const;
 
   return (
-    <section className="mb-10" id="projects">
+    <section className="mb-16" id="projects">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("sub")}</p>
-      <ul className="space-y-2 text-sm">
-        {keys.map((project) => (
-          <li key={t(`${project}.id`)}>
-            <a
-              className="link"
-              href={t(`${project}.githubLink`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t("ProjectLinkAriaLabel")}
-            >
-              {t(`${project}.title`).trim()}
-            </a>
-            <span className="text-gray-500"> — </span>
-            <span className="text-gray-400">
-              {t(`${project}.description`)}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div className="space-y-8">
+        {keys.map((project) => {
+          const technologies = t.raw(`${project}.technologies`) as string[];
+          return (
+            <article key={t(`${project}.id`)}>
+              <a
+                className="link text-sm font-semibold"
+                href={t(`${project}.githubLink`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("ProjectLinkAriaLabel")}
+              >
+                {t(`${project}.title`).trim()}
+              </a>
+              <p className="text-sm text-[var(--muted-strong)] mt-1 leading-relaxed prose">
+                {t(`${project}.description`)}
+              </p>
+              <p className="tech-list mt-2">{technologies.join(" • ")}</p>
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 };
