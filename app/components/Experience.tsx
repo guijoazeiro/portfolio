@@ -4,25 +4,24 @@ const Experience = () => {
   const t = useTranslations("Experience");
   const keys = ["First", "Second", "Third"] as const;
   return (
-    <section className="mb-10" id="experience">
+    <section className="mb-16" id="experience">
       <h2 className="section-title">{t("h1")}</h2>
-      <div className="space-y-5">
+      <div className="space-y-10 mt-6">
         {keys.map((exp) => (
-          <div key={t(`${exp}.id`)} className="text-sm">
-            <div className="flex flex-wrap gap-x-3 items-baseline">
-              <span className="text-gray-400 text-xs">
-                {t(`${exp}.startDate`)} - {t(`${exp}.endDate`)}
-              </span>
-              <span className="text-[var(--link)] font-bold">
-                {t(`${exp}.company`)}
-              </span>
-              <span className="text-gray-500">·</span>
-              <span>{t(`${exp}.role`)}</span>
-            </div>
-            <p className="text-gray-400 mt-2 leading-relaxed">
+          <article key={t(`${exp}.id`)}>
+            <p className="text-xs text-[var(--muted)] mb-1 uppercase tracking-wider">
+              {t(`${exp}.startDate`)} — {t(`${exp}.endDate`)}
+            </p>
+            <h3 className="text-sm text-[var(--heading)] font-bold">
+              {t(`${exp}.company`)}
+            </h3>
+            <p className="text-sm text-[var(--link)] mb-3">
+              {t(`${exp}.role`)}
+            </p>
+            <p className="text-sm text-[var(--muted-strong)] leading-relaxed prose">
               {t(`${exp}.description`)}
             </p>
-          </div>
+          </article>
         ))}
       </div>
     </section>

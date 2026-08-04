@@ -4,10 +4,10 @@ import { skills } from "../../constants/constants";
 const Skills = () => {
   const t = useTranslations("Skills");
   return (
-    <section className="mb-10" id="skills">
+    <section className="mb-16" id="skills">
       <h2 className="section-title">{t("h1")}</h2>
-      <p className="text-sm text-gray-400">
-        {skills.map((s) => s.trim()).join(" · ")}
+      <p className="text-sm text-[var(--muted-strong)] leading-relaxed prose">
+        {skills.join(" • ")}
       </p>
     </section>
   );

@@ -5,14 +5,14 @@ const Articles = () => {
   const keys = ["First", "Second", "Third"] as const;
 
   return (
-    <section className="mb-10" id="articles">
+    <section className="mb-16" id="articles">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("sub")}</p>
-      <ul className="space-y-3 text-sm">
+      <div className="space-y-8">
         {keys.map((article) => (
-          <li key={t(`${article}.id`)}>
+          <article key={t(`${article}.id`)}>
             <a
-              className="link block"
+              className="link text-sm font-semibold"
               href={t(`${article}.linkedinLink`)}
               target="_blank"
               rel="noopener noreferrer"
@@ -20,12 +20,15 @@ const Articles = () => {
             >
               {t(`${article}.title`)}
             </a>
-            <p className="text-gray-400 text-xs mt-1">
+            <p className="text-xs text-[var(--muted)] mt-1 tracking-wider">
+              {t(`${article}.date`)} • {t(`${article}.readingTime`)}
+            </p>
+            <p className="text-sm text-[var(--muted-strong)] mt-2 leading-relaxed prose">
               {t(`${article}.description`)}
             </p>
-          </li>
+          </article>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

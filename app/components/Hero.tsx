@@ -6,10 +6,14 @@ const Hero = () => {
   const t = useTranslations("Hero");
 
   return (
-    <header className="mb-10">
-      <h1 className="text-3xl md:text-4xl text-[var(--link)] font-bold mb-3">
+    <header className="mb-20">
+      <h1 className="text-3xl md:text-4xl text-[var(--link)] font-bold tracking-tight mb-3">
         guilherme joazeiro
       </h1>
+      <p className="text-sm text-[var(--muted-strong)] font-semibold">
+        {t("role")}
+      </p>
+      <p className="text-sm text-[var(--muted)] mb-5 prose">{t("tagline")}</p>
       <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
         <a
           className="link inline-flex items-center gap-2"

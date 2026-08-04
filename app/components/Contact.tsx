@@ -34,7 +34,7 @@ const Contact = () => {
     "w-full bg-transparent border border-gray-800 focus:border-[var(--link)] outline-none px-3 py-2 text-sm text-gray-200";
 
   return (
-    <section className="mb-10" id="contact">
+    <section className="mb-16" id="contact">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("h3")}</p>
       <form onSubmit={handleSubmit} className="space-y-3 max-w-lg text-sm">

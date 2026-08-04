@@ -39,16 +39,15 @@
   "Hero": {
     "h1": "Olá, sou",
     "words": " Desenvolvedor Backend",
+    "role": "Backend Engineer",
+    "tagline": "Construindo APIs escaláveis, microsserviços e sistemas distribuídos.",
     "cv": "Baixar CV",
     "contact": "Contato",
     "cvlink": "curriculoGuilhermeJoazeiro.pdf"
   },
   "About": {
     "h1": "Sobre mim",
-    "p1": "Sou desenvolvedor de software Node.js, Java e Python com mais de 1 ano de experiência na área de desenvolvimento web. Sou um profissional comprometido, estudioso, sempre empenhado em aprender e evoluir, pronto para enfrentar qualquer obstáculo e contribuir com soluções eficazes para o sucesso da equipe.",
-    "p2": "Atualmente estou focado no backend e trabalho com as seguintes tecnologias: ",
-    "p3": "Node.js (Javascript/Typescript) | Framework Express/Nestjs/Fastify | Java Spring | Python (Pandas, Django) | SQL, bancos de dados relacionais (Postgres, MySql e SQLServer) e não relacionais (Redis, MongoDB) | Testes unitários e de integração com Node.js e Java | Noções de microsserviços, design patterns, DDD e Clean Code (SOLID) | Docker | Noções de versionamento de código com GIT, Github, GitLab | Noções básicas de React.js, Angular, NextJS, HTML, CSS e JS.",
-    "p4": "Tenho habilidades de leitura e conversação em inglês em um nível intermediário."
+    "p1": "Sou Backend Engineer com mais de 3 anos de experiência desenvolvendo APIs REST, microsserviços e sistemas escaláveis com Node.js, TypeScript, Python, Java e Golang. Atuo desde a arquitetura e modelagem de banco de dados até deploy em AWS, CI/CD e automações, sempre com foco em performance, segurança e código de qualidade."
   },
   "Skills": {
     "h1": "Habilidades"
@@ -150,18 +149,24 @@
       "id": "1",
       "title": "Escalando Aplicações Node.js com Clusters",
       "description": "O artigo aborda como escalar aplicações Node.js utilizando o módulo de clusters para melhorar desempenho e aproveitamento de recursos do servidor.",
+      "date": "Nov 2023",
+      "readingTime": "5 min leitura",
       "linkedinLink": "https://www.linkedin.com/pulse/escalando-aplicações-nodejs-com-clusters-guilherme-joazeiro-draif/"
     },
     "Second": {
       "id": "2",
       "title": "Proxy reverso: O herói desconhecido da web",
       "description": "O artigo explica como proxies reversos otimizam a distribuição de tráfego, segurança e balanceamento de carga em aplicações web.",
+      "date": "Fev 2024",
+      "readingTime": "4 min leitura",
       "linkedinLink": "https://www.linkedin.com/pulse/proxy-reverso-o-herói-desconhecido-da-web-guilherme-joazeiro-aebrf/"
     },
     "Third": {
       "id": "3",
       "title": "Otimizando a Performance do Node.js com o Event Loop",
       "description": "O artigo discute como otimizar a performance de aplicações Node.js utilizando o Event Loop.",
+      "date": "Ago 2024",
+      "readingTime": "6 min leitura",
       "linkedinLink": "https://www.linkedin.com/pulse/otimizando-performance-do-nodejs-com-o-event-loop-guilherme-joazeiro-nw8sf/"
     }
   },

@@ -3,38 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --link: #6a8eff;
-  --muted: #6b7280;
-  --fg: #d1d5db;
+  --link: #6d8cff;
+  --link-hover: #93a8ff;
+  --fg: #d4d4d8;
+  --muted: #71717a;
+  --muted-strong: #a1a1aa;
+  --heading: #fafafa;
 }
 
 html,
 body {
   background: #09090b;
   color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-a.link,
-.prose a {
+a.link {
   color: var(--link);
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration-color: rgba(109, 140, 255, 0.35);
+  text-underline-offset: 4px;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
 }
 
-a.link:hover,
-.prose a:hover {
-  color: #93a8ff;
+a.link:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .section-title {
-  color: #e5e7eb;
+  color: var(--heading);
   font-weight: 700;
   font-size: 1.25rem;
+  letter-spacing: -0.01em;
   margin-bottom: 0.25rem;
 }
 
 .section-sub {
   color: var(--muted);
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.prose {
+  max-width: 68ch;
+}
+
+.prose p {
+  line-height: 1.7;
+}
+
+.tech-list {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
 }

@@ -31,7 +31,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <AnimatedBackground />
           <div className="relative z-10 min-h-screen text-gray-300">
-            <div className="max-w-3xl mx-auto px-5 md:px-8 py-10">
+            <div className="max-w-[760px] mx-auto px-5 md:px-8 py-16">
               <Navbar />
               {children}
               <Footer />
