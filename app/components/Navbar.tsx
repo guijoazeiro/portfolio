@@ -1,30 +1,41 @@
 "use client";
 
-import Image from "next/image";
-import BrazilFlag from "../assets/brazil-flag.png";
-import UsFlag from "../assets/us-flag.png";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/navigation";
 
-const Navbar = () => {
+export default function Navbar() {
+  const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
 
+  function changeLocale(nextLocale: "pt" | "en") {
+    if (nextLocale === locale) return;
+    router.push(pathname, { locale: nextLocale });
+  }
+
   return (
-    <div className="flex items-center justify-end gap-3 mb-6">
-      <Image
-        src={BrazilFlag}
-        className="w-6 h-6 cursor-pointer opacity-70 hover:opacity-100"
-        alt="Portugues"
-        onClick={() => router.push(pathname, { locale: "pt" })}
-      />
-      <Image
-        src={UsFlag}
-        className="w-6 h-6 cursor-pointer opacity-70 hover:opacity-100"
-        alt="English"
-        onClick={() => router.push(pathname, { locale: "en" })}
-      />
+    <div className="mb-6 flex justify-end">
+      <div className="flex items-center gap-2 text-sm font-medium text-zinc-500">
+        <button
+          onClick={() => changeLocale("pt")}
+          className={`transition-colors hover:text-[#6d8cff] ${
+            locale === "pt" ? "text-[#6d8cff]" : ""
+          }`}
+        >
+          PT
+        </button>
+
+        <span className="text-zinc-700">/</span>
+
+        <button
+          onClick={() => changeLocale("en")}
+          className={`transition-colors hover:text-[#6d8cff] ${
+            locale === "en" ? "text-[#6d8cff]" : ""
+          }`}
+        >
+          EN
+        </button>
+      </div>
     </div>
   );
-};
-
-export default Navbar;
+}
