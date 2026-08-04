@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <section className="mb-10" id="projects">
       <h2 className="section-title">{t("h1")}</h2>
-      <p className="section-sub">A few things I&apos;ve been building.</p>
+      <p className="section-sub">{t("sub")}</p>
       <ul className="space-y-2 text-sm">
         {keys.map((project) => (
           <li key={t(`${project}.id`)}>

@@ -82,6 +82,7 @@
   },
   "Projects": {
     "h1": "Projetos",
+    "sub": "Algumas coisas que venho construindo.",
     "ProjectLinkAriaLabel": "Link para o repositório do GitHub do projeto",
     "First": {
       "id": "1",
@@ -143,6 +144,7 @@
   },
   "Articles": {
     "h1": "Artigos",
+    "sub": "Espero que os arigos que escrevi possam te ajudar de alguma forma.",
     "ArticleLinkAriaLabel": "Link para o artigo",
     "First": {
       "id": "1",

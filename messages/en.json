@@ -82,6 +82,7 @@
   },
   "Projects": {
     "h1": "Projects",
+    "sub": "A few things I've been building.",
     "ProjectLinkAriaLabel": "Link to project GitHub repository",
     "First": {
       "id": "1",
@@ -143,6 +144,7 @@
   },
   "Articles": {
     "h1": "Articles",
+    "sub": "Hope the articles I've written can help you in some way.",
     "ArticleLinkAriaLabel": "Link to article",
     "First": {
       "id": "1",
