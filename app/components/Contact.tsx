@@ -16,9 +16,7 @@ const Contact = () => {
     setStatus("Enviando");
     const res = await fetch("/api/contact", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, message }),
     });
 
@@ -32,61 +30,62 @@ const Contact = () => {
     }
   };
 
+  const inputCls =
+    "w-full bg-transparent border border-gray-800 focus:border-[var(--link)] outline-none px-3 py-2 text-sm text-gray-200";
+
   return (
-    <div className="container mx-auto mb-5 p-5 md:p-0" id="contact">
-      <h1 className="underline underline-offset-4 mb-5 text-2xl">{t("h1")}</h1>
-      <div className="flex items-center justify-between flex-wrap">
-        <div className="p-5 w-full md:w-[49%] flex flex-col justify-between items-center mb-5 gap-10">
-          <h4>{t("h2")}</h4>
-          <p className="text-[16px] text-gray-300">{t("h3")}</p>
+    <section className="mb-10" id="contact">
+      <h2 className="section-title">{t("h1")}</h2>
+      <p className="section-sub">{t("h3")}</p>
+      <form onSubmit={handleSubmit} className="space-y-3 max-w-lg text-sm">
+        <div>
+          <label htmlFor="name" className="block text-gray-400 mb-1">
+            {t("emailName")}
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className={inputCls}
+            required
+          />
         </div>
-        <div className="w-full md:w-[49%] p-5 flex flex-col justify-between items-center mb-5 gap-10">
-          <form onSubmit={handleSubmit} className="space-y-4 w-full" aria-labelledby="contact">
-            <div>
-              <label htmlFor="name">{t("emailName")}</label>
-              <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border bg-zinc-800 bg-opacity-30 hover:border-gray-500 border-gray-800 rounded-md shadow-sm focus:outline-none sm:text-sm"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email">{t("emailAddress")}</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border bg-zinc-800 bg-opacity-30 hover:border-gray-500 border-gray-800 rounded-md shadow-sm focus:outline-none sm:text-sm"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="message">{t("emailMessage")}</label>
-              <textarea
-                id="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border bg-zinc-800 bg-opacity-30 hover:border-gray-500 border-gray-800 rounded-md shadow-sm focus:outline-none sm:text-sm"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Enviar
-            </button>
-            {status && <p className="mt-4 text-center">{status}</p>}
-          </form>
+        <div>
+          <label htmlFor="email" className="block text-gray-400 mb-1">
+            {t("emailAddress")}
+          </label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={inputCls}
+            required
+          />
         </div>
-      </div>
-    </div>
+        <div>
+          <label htmlFor="message" className="block text-gray-400 mb-1">
+            {t("emailMessage")}
+          </label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className={`${inputCls} min-h-[100px]`}
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="border border-[var(--link)] text-[var(--link)] px-4 py-2 hover:bg-[var(--link)] hover:text-black transition-colors"
+        >
+          Enviar
+        </button>
+        {status && <p className="text-gray-400">{status}</p>}
+      </form>
+    </section>
   );
-  
 };
 
 export default Contact;

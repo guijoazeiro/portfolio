@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { FiLinkedin } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 
 const Articles = () => {
@@ -7,39 +5,28 @@ const Articles = () => {
   const keys = ["First", "Second", "Third"] as const;
 
   return (
-    <div className="container mx-auto px-5 pb-10 md:px-0" id="articles">
-      <h1 className="underline underline-offset-4 mb-5 text-2xl">{t("h1")}</h1>
-
-      <div className="flex items-center justify-between flex-wrap">
-        {keys.map((article, index) => {
-          const isLast = index === keys.length - 1 && keys.length % 2 !== 0;
-          return (
-            <div
-              className={`bg-zinc-800 bg-opacity-20 hover:border-gray-600 transition-all duration-500 border-gray-800 border rounded-md p-5 w-full md:w-[49%] flex flex-col justify-between items-center mb-5 gap-10 ${
-                isLast ? "md:mx-auto" : ""
-              }`}
-              key={t(`${article}.id`)}
+    <section className="mb-10" id="articles">
+      <h2 className="section-title">{t("h1")}</h2>
+      <p className="section-sub">{t("sub")}</p>
+      <ul className="space-y-3 text-sm">
+        {keys.map((article) => (
+          <li key={t(`${article}.id`)}>
+            <a
+              className="link block"
+              href={t(`${article}.linkedinLink`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("ArticleLinkAriaLabel")}
             >
-              <div className="w-full flex items-center justify-end gap-5">
-                <Link
-                  href={t(`${article}.linkedinLink`)}
-                  target="_blank"
-                  aria-label={t("ArticleLinkAriaLabel")}
-                >
-                  <FiLinkedin className="hover:text-[#93DEFF]" size={20} />
-                </Link>
-              </div>
-              <h3>{t(`${article}.title`).toUpperCase()}</h3>
-              <p className="text-sm text-gray-300 text-center">
-                {t(`${article}.description`)}
-              </p>
-
-              <div className="flex gap-3 flex-wrap items-center justify-center"></div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+              {t(`${article}.title`)}
+            </a>
+            <p className="text-gray-400 text-xs mt-1">
+              {t(`${article}.description`)}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 
