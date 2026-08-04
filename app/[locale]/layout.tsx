@@ -3,7 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Spotlight from "../components/Spotlight";
+import { AnimatedBackground } from "../components/AnimatedBackground";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 
@@ -29,9 +29,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={jetbrainsMono.className}>
         <NextIntlClientProvider messages={messages}>
-          <div className="bg-black text-gray-300 min-h-screen bg-pattern relative">
-            <Spotlight />
-            <div className="max-w-3xl mx-auto px-5 md:px-8 py-10 relative z-10">
+          <AnimatedBackground />
+          <div className="relative z-10 min-h-screen text-gray-300">
+            <div className="max-w-3xl mx-auto px-5 md:px-8 py-10">
               <Navbar />
               {children}
               <Footer />

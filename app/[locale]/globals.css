@@ -8,41 +8,10 @@
   --fg: #d1d5db;
 }
 
+html,
 body {
+  background: #09090b;
   color: var(--fg);
-  background: #000;
-}
-
-.bg-pattern {
-  background-color: #05060a;
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(120, 140, 220, 0.05) 0px,
-      rgba(120, 140, 220, 0.05) 1px,
-      transparent 1px,
-      transparent 14px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(120, 140, 220, 0.03) 0px,
-      rgba(120, 140, 220, 0.03) 1px,
-      transparent 1px,
-      transparent 28px
-    );
-}
-
-.spotlight {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(
-    500px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(110, 140, 255, 0.08),
-    transparent 60%
-  );
-  transition: background 0.1s ease-out;
 }
 
 a.link,
@@ -55,12 +24,6 @@ a.link,
 a.link:hover,
 .prose a:hover {
   color: #93a8ff;
-}
-
-h1.terminal,
-h2.terminal {
-  color: var(--link);
-  font-weight: 700;
 }
 
 .section-title {
