@@ -13,7 +13,7 @@
     "skills": {
       "id": 3,
       "href": "#skills",
-      "text": "Skills"
+      "text": "Stack"
     },
     "experience": {
       "id": 4,
@@ -40,43 +40,63 @@
     "h1": "Hello, I'm",
     "words": " Backend Developer",
     "role": "Backend Engineer",
-    "tagline": "Building scalable APIs, microservices and distributed systems.",
+    "stack": "Node.js • TypeScript • Go • Python",
     "cv": "Download CV",
     "contact": "Contact",
     "cvlink": "curriculumGuilhermeJoazeiro.pdf"
   },
   "About": {
-    "h1": "About me",
-    "p1": "I'm a Backend Engineer with over 3 years of experience building REST APIs, microservices and scalable systems with Node.js, TypeScript, Python, Java and Golang. I work across the stack from architecture and database modeling to AWS deployment, CI/CD and automations, always focused on performance, security and code quality."
+    "h1": "About",
+    "p1": "Backend Engineer with 3+ years building REST APIs, microservices and scalable systems with Node.js, TypeScript, Python, Java and Go. I work end-to-end — from architecture and data modeling to AWS deploys, CI/CD and automations — with a focus on performance, security and code quality."
   },
   "Skills": {
-    "h1": "Skills"
+    "h1": "Stack"
   },
   "Experience": {
     "h1": "Experience",
     "First": {
       "id": "3",
       "company": "Greens Pharmaceutical Corp",
-      "role": "Backend Developer",
-      "startDate": "Set 2025",
+      "role": "Backend Engineer",
+      "startDate": "Sep 2025",
       "endDate": "Present",
-      "description": "I work as a backend developer with technical leadership, defining architecture, SQL modeling, technology stack, and solution feasibility. I am responsible for leading the backend development of a patient management system and a patient medication prescription management system. I develop and evolve the inventory system using Python and Flask, and I initiated and lead the development of the internal system with Node.js and TypeScript. I structured the version control workflow using GitHub, adopting pull requests and code best practices. I implemented automations with n8n, WhatsApp, and OpenAI, focusing on integrations and database persistence. I configured VPS environments on Ubuntu and NGINX for application deployment. I worked on configuring the AWS environment with EC2, RDS (PostgreSQL), S3, and ECR, as well as CI/CD pipelines with GitHub Actions, automating build, deployment, and versioning. I am also responsible for translating requirements into tasks, organizing the workflow in Trello, reviewing pull requests, and mentoring the backend team."
+      "bullets": [
+        "Led the backend technically — architecture, SQL modeling and stack decisions",
+        "Led backend development of the patient and prescription management systems",
+        "Built the inventory system in Python and Flask and started the internal system in Node.js and TypeScript",
+        "Set up AWS environment (EC2, RDS PostgreSQL, S3, ECR) with CI/CD pipelines on GitHub Actions",
+        "Implemented automations with n8n, WhatsApp and OpenAI, integrated with the database",
+        "Configured Ubuntu VPS and NGINX for application deploys",
+        "Structured the PR workflow, reviewed code and mentored the backend team"
+      ]
     },
     "Second": {
       "id": "2",
       "company": "TTMS Technologies",
-      "role": "Backend Developer",
+      "role": "Backend Engineer",
       "startDate": "Aug 2024",
       "endDate": "Nov 2024",
-      "description": "I worked as a developer using Node.js and JavaScript, with a focus on microservices architecture and message integration, as well as working with MySQL, Docker, AWS, and Linux. I contributed to the development and maintenance of REST APIs, creating new endpoints and features, as well as performing automated testing to ensure code quality. I was also responsible for debugging, optimizing processes, and managing integrations with AWS services, always aiming for continuous improvement and efficient solution delivery."
+      "bullets": [
+        "Built and maintained REST APIs in Node.js, shipping new endpoints and features",
+        "Worked on microservices architecture with messaging, MySQL, Docker and AWS",
+        "Wrote automated tests to ensure code quality",
+        "Optimized processes and fixed bugs across AWS integrations"
+      ]
     },
     "Third": {
       "id": "1",
       "company": "Adin Oracle CX",
-      "role": "Backend Developer",
+      "role": "Backend Engineer",
       "startDate": "Aug 2022",
       "endDate": "Dec 2023",
-      "description": "I developed integrations between Node.js applications and Oracle services using Express and NestJS, optimizing data flow and communication between systems. I implemented secure and efficient RESTful APIs, following best development practices. I used Docker for deploying and managing applications, as well as MongoDB and PostgreSQL for data storage. I created unit tests with Jest and end-to-end tests to ensure the quality of functionalities. I automated the sending of personalized emails with Python and Pandas, eliminating manual processes and increasing the efficiency of marketing campaigns. In Salesforce, I developed e-commerce functionalities with Node.js, HTML, and CSS, improving customer experience and fixing bugs to ensure project stability."
+      "bullets": [
+        "Built integrations between Node.js applications and Oracle services using Express and NestJS",
+        "Implemented secure RESTful APIs following best practices",
+        "Used Docker for deployment and MongoDB and PostgreSQL for storage",
+        "Wrote unit tests with Jest and end-to-end tests",
+        "Automated personalized email campaigns with Python and Pandas",
+        "Delivered Salesforce e-commerce features with Node.js, HTML and CSS"
+      ]
     }
   },
   "Projects": {
@@ -85,8 +105,8 @@
     "ProjectLinkAriaLabel": "Link to project GitHub repository",
     "First": {
       "id": "1",
-      "title": "Communication between Microservices.",
-      "description": "Project for communication between Java and Node.js microservices",
+      "title": "Microservices Communication",
+      "description": "Communication between Java and Node.js microservices.",
       "technologies": [
         "Spring Boot",
         "Express.js",
@@ -101,9 +121,9 @@
     "Second": {
       "id": "2",
       "title": "Papelaria API",
-      "description": "E-commerce API built with NestJS, Postgres, and AWS S3",
+      "description": "E-commerce API built with NestJS, Postgres and AWS S3.",
       "technologies": [
-        "Typescript",
+        "TypeScript",
         "Node.js",
         "Postgres",
         "AWS S3",
@@ -116,9 +136,9 @@
     "Third": {
       "id": "3",
       "title": "SpotTube",
-      "description": "Playlist converter API from YouTube to Spotify",
+      "description": "Playlist converter between YouTube and Spotify.",
       "technologies": [
-        "Typescript",
+        "TypeScript",
         "Node.js",
         "Postgres",
         "JWT",
@@ -128,35 +148,35 @@
     },
     "Fourth": {
       "id": "4",
-      "title": "Files Conversion Microservices",
-      "description": "Project for files conversion microservices",
+      "title": "File Conversion Microservices",
+      "description": "Microservices for file conversion.",
       "technologies": [
-        "Nodejs",
+        "Node.js",
         "Go",
         "Redis",
         "Docker",
         "PostgreSQL",
-        "Ffmpeg"
+        "FFmpeg"
       ],
       "githubLink": "https://github.com/guijoazeiro/conversion-microservice"
     }
   },
   "Articles": {
     "h1": "Articles",
-    "sub": "Hope the articles I've written can help you in some way.",
+    "sub": "A few writings that may be useful.",
     "ArticleLinkAriaLabel": "Link to article",
     "First": {
       "id": "1",
       "title": "Scaling Node.js Applications with Clusters",
-      "description": "The article discusses how to scale Node.js applications using the cluster module to improve performance and resource utilization of the server.",
+      "description": "How to scale Node.js applications using the cluster module to improve performance and resource utilization.",
       "date": "Nov 2023",
       "readingTime": "5 min read",
       "linkedinLink": "https://www.linkedin.com/pulse/escalando-aplicações-nodejs-com-clusters-guilherme-joazeiro-draif/"
     },
     "Second": {
       "id": "2",
-      "title": "Reverse Proxy: The Unsung Hero of the Web",
-      "description": "The article explains how reverse proxies optimize traffic distribution, security, and load balancing in web applications.",
+      "title": "Reverse Proxy: the unsung hero of the web",
+      "description": "How reverse proxies optimize traffic distribution, security and load balancing in web applications.",
       "date": "Feb 2024",
       "readingTime": "4 min read",
       "linkedinLink": "https://www.linkedin.com/pulse/proxy-reverso-o-herói-desconhecido-da-web-guilherme-joazeiro-aebrf/"
@@ -166,7 +186,7 @@
       "date": "Aug 2024",
       "readingTime": "6 min read",
       "title": "Optimizing Node.js Performance with the Event Loop",
-      "description": "The article discusses how to optimize the performance of Node.js applications using the Event Loop. ",
+      "description": "How to optimize the performance of Node.js applications by understanding the Event Loop.",
       "linkedinLink": "https://www.linkedin.com/pulse/otimizando-performance-do-nodejs-com-o-event-loop-guilherme-joazeiro-nw8sf/"
     }
   },

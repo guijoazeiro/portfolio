@@ -5,16 +5,16 @@ const Projects = () => {
   const keys = ["First", "Second", "Third", "Fourth"] as const;
 
   return (
-    <section className="mb-16" id="projects">
+    <section className="mb-24" id="projects">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("sub")}</p>
-      <div className="space-y-8">
+      <div className="space-y-10">
         {keys.map((project) => {
           const technologies = t.raw(`${project}.technologies`) as string[];
           return (
             <article key={t(`${project}.id`)}>
               <a
-                className="link text-sm font-semibold"
+                className="link text-base font-semibold tracking-tight"
                 href={t(`${project}.githubLink`)}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -22,10 +22,10 @@ const Projects = () => {
               >
                 {t(`${project}.title`).trim()}
               </a>
-              <p className="text-sm text-[var(--muted-strong)] mt-1 leading-relaxed prose">
+              <p className="text-sm text-[var(--muted-strong)] mt-2 leading-relaxed prose">
                 {t(`${project}.description`)}
               </p>
-              <p className="tech-list mt-2">{technologies.join(" • ")}</p>
+              <p className="tech-list mt-3">{technologies.join(" • ")}</p>
             </article>
           );
         })}

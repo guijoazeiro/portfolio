@@ -23,7 +23,7 @@ body {
 a.link {
   color: var(--link);
   text-decoration: underline;
-  text-decoration-color: rgba(109, 140, 255, 0.35);
+  text-decoration-color: rgba(109, 140, 255, 0.25);
   text-underline-offset: 4px;
   transition: color 180ms ease, text-decoration-color 180ms ease;
 }
@@ -44,7 +44,7 @@ a.link:hover {
 .section-sub {
   color: var(--muted);
   font-size: 0.875rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .prose {
@@ -59,4 +59,58 @@ a.link:hover {
   color: var(--muted);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--muted-strong);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+.bullets li + li {
+  margin-top: 0.5rem;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 420ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+  a.link {
+    transition: none;
+  }
 }

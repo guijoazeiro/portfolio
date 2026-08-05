@@ -76,18 +76,21 @@ export const projects = [
   },
 ];
 
-export const skills = [
-  "TypeScript",
-  "Node.js",
-  "Python",
-  "Golang",
-  "Java",
-  "AWS",
-  "Docker",
-  "PostgreSQL",
-  "Redis",
-  "NestJS",
-  "Fastify",
-  "Spring Boot",
-  "GitHub Actions",
+export const stackGroups = [
+  {
+    label: "Languages",
+    items: ["TypeScript", "Python", "Go", "Java"],
+  },
+  {
+    label: "Backend",
+    items: ["Node.js", "NestJS", "Fastify", "Spring Boot"],
+  },
+  {
+    label: "Database",
+    items: ["PostgreSQL", "Redis", "MongoDB"],
+  },
+  {
+    label: "Cloud",
+    items: ["AWS", "Docker", "GitHub Actions"],
+  },
 ];
