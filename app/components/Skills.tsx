@@ -1,22 +1,26 @@
 import { useTranslations } from "next-intl";
+import { Fragment } from "react";
 import { stackGroups } from "../../constants/constants";
 
 const Skills = () => {
   const t = useTranslations("Skills");
   return (
-    <section className="mb-24" id="skills">
+    <section className="mb-24 reveal" id="skills">
       <h2 className="section-title">{t("h1")}</h2>
-      <div className="space-y-4 mt-6">
+      <div className="flex flex-col gap-y-5 mt-6">
         {stackGroups.map((group) => (
           <div
             key={group.label}
-            className="flex flex-col sm:flex-row sm:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-x-6 gap-y-1"
           >
-            <div className="text-xs uppercase tracking-wider text-[var(--muted)] w-24 flex-shrink-0 mb-1 sm:mb-0 sm:pt-0.5">
-              {group.label}
-            </div>
-            <div className="text-sm text-[var(--muted-strong)]">
-              {group.items.join(" • ")}
+            <div className="stack-label pt-[3px]">{group.label}</div>
+            <div className="stack-items">
+              {group.items.map((item, i) => (
+                <Fragment key={item}>
+                  {i > 0 && <span className="sep">·</span>}
+                  {item}
+                </Fragment>
+              ))}
             </div>
           </div>
         ))}

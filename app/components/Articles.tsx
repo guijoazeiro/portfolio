@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Articles = () => {
   const t = useTranslations("Articles");
   const keys = ["First", "Second", "Third"] as const;
 
   return (
-    <section className="mb-24" id="articles">
+    <section className="mb-24 reveal" id="articles">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("sub")}</p>
       <div className="space-y-10">
@@ -18,7 +19,8 @@ const Articles = () => {
               rel="noopener noreferrer"
               aria-label={t("ArticleLinkAriaLabel")}
             >
-              {t(`${article}.title`)}
+              <FiArrowUpRight aria-hidden />
+              <span>{t(`${article}.title`)}</span>
             </a>
             <p className="text-xs text-[var(--muted)] mt-2 tracking-wider">
               {t(`${article}.date`)} • {t(`${article}.readingTime`)}

@@ -58,8 +58,8 @@
       "id": "3",
       "company": "Greens Pharmaceutical Corp",
       "role": "Backend Engineer",
-      "startDate": "Set 2025",
-      "endDate": "o momento",
+      "startDate": "2025",
+      "endDate": "Atual",
       "bullets": [
         "Liderei tecnicamente o backend — arquitetura, modelagem SQL e definição de stack",
         "Liderei o desenvolvimento dos sistemas de gerenciamento de pacientes e prescrições",
@@ -74,7 +74,7 @@
       "id": "2",
       "company": "TTMS Technologies",
       "role": "Backend Engineer",
-      "startDate": "Ago 2024",
+      "startDate": "Ago",
       "endDate": "Nov 2024",
       "bullets": [
         "Desenvolvi e mantive APIs REST em Node.js, entregando novos endpoints e features",
@@ -87,8 +87,8 @@
       "id": "1",
       "company": "Adin Oracle CX",
       "role": "Backend Engineer",
-      "startDate": "Ago 2022",
-      "endDate": "Dez 2023",
+      "startDate": "2022",
+      "endDate": "2023",
       "bullets": [
         "Desenvolvi integrações entre aplicações Node.js e serviços Oracle com Express e NestJS",
         "Implementei APIs RESTful seguras seguindo boas práticas",

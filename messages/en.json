@@ -74,7 +74,7 @@
       "id": "2",
       "company": "TTMS Technologies",
       "role": "Backend Engineer",
-      "startDate": "Aug 2024",
+      "startDate": "Aug",
       "endDate": "Nov 2024",
       "bullets": [
         "Built and maintained REST APIs in Node.js, shipping new endpoints and features",

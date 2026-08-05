@@ -9,6 +9,8 @@
   --muted: #71717a;
   --muted-strong: #a1a1aa;
   --heading: #fafafa;
+  --border: #27272a;
+  --border-strong: #3f3f46;
 }
 
 html,
@@ -20,19 +22,35 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* ---------- Links: animated left→right underline ---------- */
 a.link {
   color: var(--link);
-  text-decoration: underline;
-  text-decoration-color: rgba(109, 140, 255, 0.25);
-  text-underline-offset: 4px;
-  transition: color 180ms ease, text-decoration-color 180ms ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+  transition: color 180ms ease, background-size 240ms ease;
+  will-change: background-size;
 }
 
-a.link:hover {
+a.link:hover,
+a.link:focus-visible {
   color: var(--link-hover);
-  text-decoration-color: var(--link-hover);
+  background-size: 100% 1px;
 }
 
+a.link:focus-visible {
+  outline: none;
+  border-radius: 2px;
+}
+
+/* ---------- Section titles ---------- */
 .section-title {
   color: var(--heading);
   font-weight: 700;
@@ -47,6 +65,7 @@ a.link:hover {
   margin-bottom: 2rem;
 }
 
+/* ---------- Prose ---------- */
 .prose {
   max-width: 68ch;
 }
@@ -55,12 +74,35 @@ a.link:hover {
   line-height: 1.7;
 }
 
+/* ---------- Tech list under projects ---------- */
 .tech-list {
   color: var(--muted);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
 }
 
+/* ---------- Stack group ---------- */
+.stack-label {
+  color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stack-items {
+  color: #d4d4d8;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.stack-items .sep {
+  color: #52525b;
+  margin: 0 0.5em;
+}
+
+/* ---------- Experience bullets ---------- */
 .bullets {
   list-style: none;
   padding: 0;
@@ -72,25 +114,104 @@ a.link:hover {
   padding-left: 1.1rem;
   color: var(--muted-strong);
   font-size: 0.875rem;
-  line-height: 1.65;
+  line-height: 1.55;
   max-width: 68ch;
 }
 
 .bullets li + li {
-  margin-top: 0.5rem;
+  margin-top: 0.35rem;
 }
 
 .bullets li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.7em;
+  top: 0.65em;
   width: 4px;
   height: 4px;
   border-radius: 9999px;
   background: var(--muted);
 }
 
+/* ---------- Experience company (Linear-style hover bar) ---------- */
+.experience-item {
+  position: relative;
+}
+
+.company {
+  position: relative;
+  display: inline-block;
+  transition: transform 150ms ease;
+}
+
+.company::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 2px;
+  background: var(--link);
+  opacity: 0;
+  transform: scaleY(0.5);
+  transform-origin: center;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.experience-item:hover .company::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ---------- Contact form ---------- */
+.input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: #e4e4e7;
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.input:hover {
+  border-color: var(--border-strong);
+}
+
+.input:focus {
+  border-color: var(--link);
+  box-shadow: 0 0 0 3px rgba(109, 140, 255, 0.12);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--link);
+  color: var(--link);
+  background: transparent;
+  padding: 0.55rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: transform 150ms ease, background-color 150ms ease,
+    color 150ms ease, box-shadow 180ms ease;
+}
+
+.btn-primary:hover {
+  background: var(--link);
+  color: #09090b;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -10px rgba(109, 140, 255, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ---------- Page fade-in ---------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -106,11 +227,37 @@ a.link:hover {
   animation: fadeIn 420ms ease-out both;
 }
 
+/* ---------- Scroll-driven section reveal (progressive enhancement) ---------- */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in {
+  .fade-in,
+  .reveal {
     animation: none;
   }
-  a.link {
+  a.link,
+  .company,
+  .company::before,
+  .btn-primary,
+  .input {
     transition: none;
   }
 }
