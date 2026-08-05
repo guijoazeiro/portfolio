@@ -30,16 +30,16 @@ const Contact = () => {
     }
   };
 
-  const inputCls =
-    "w-full bg-transparent border border-gray-800 focus:border-[var(--link)] outline-none px-3 py-2 text-sm text-gray-200";
-
   return (
-    <section className="mb-16" id="contact">
+    <section className="mb-24 reveal" id="contact">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("h3")}</p>
-      <form onSubmit={handleSubmit} className="space-y-3 max-w-lg text-sm">
+      <form onSubmit={handleSubmit} className="space-y-4 max-w-lg text-sm">
         <div>
-          <label htmlFor="name" className="block text-gray-400 mb-1">
+          <label
+            htmlFor="name"
+            className="block text-[var(--muted)] mb-1.5 text-xs uppercase tracking-wider"
+          >
             {t("emailName")}
           </label>
           <input
@@ -47,12 +47,15 @@ const Contact = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className={inputCls}
+            className="input"
             required
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-gray-400 mb-1">
+          <label
+            htmlFor="email"
+            className="block text-[var(--muted)] mb-1.5 text-xs uppercase tracking-wider"
+          >
             {t("emailAddress")}
           </label>
           <input
@@ -60,29 +63,29 @@ const Contact = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={inputCls}
+            className="input"
             required
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-gray-400 mb-1">
+          <label
+            htmlFor="message"
+            className="block text-[var(--muted)] mb-1.5 text-xs uppercase tracking-wider"
+          >
             {t("emailMessage")}
           </label>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className={`${inputCls} min-h-[100px]`}
+            className="input min-h-[110px] resize-y"
             required
           />
         </div>
-        <button
-          type="submit"
-          className="border border-[var(--link)] text-[var(--link)] px-4 py-2 hover:bg-[var(--link)] hover:text-black transition-colors"
-        >
+        <button type="submit" className="btn-primary">
           Enviar
         </button>
-        {status && <p className="text-gray-400">{status}</p>}
+        {status && <p className="text-[var(--muted-strong)]">{status}</p>}
       </form>
     </section>
   );
