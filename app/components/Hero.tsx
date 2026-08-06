@@ -6,8 +6,8 @@ const Hero = () => {
   const t = useTranslations("Hero");
 
   return (
-    <header className="mb-24">
-      <h1 className="text-3xl md:text-4xl text-[var(--link)] font-bold tracking-tight mb-3">
+    <header className="mb-16 md:mb-24">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl text-[var(--link)] font-bold tracking-tight mb-3 break-words">
         guilherme joazeiro
       </h1>
       <p className="text-sm text-[var(--muted-strong)] font-semibold">

@@ -5,7 +5,7 @@ import { stackGroups } from "../../constants/constants";
 const Skills = () => {
   const t = useTranslations("Skills");
   return (
-    <section className="mb-24 reveal" id="skills">
+    <section className="mb-16 md:mb-24 reveal" id="skills">
       <h2 className="section-title">{t("h1")}</h2>
       <div className="flex flex-col gap-y-5 mt-6">
         {stackGroups.map((group) => (
@@ -18,7 +18,7 @@ const Skills = () => {
               {group.items.map((item, i) => (
                 <Fragment key={item}>
                   {i > 0 && <span className="sep">·</span>}
-                  {item}
+                  <span className="whitespace-nowrap">{item}</span>
                 </Fragment>
               ))}
             </div>

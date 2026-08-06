@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="mb-24 reveal" id="contact">
+    <section className="mb-16 md:mb-24 reveal" id="contact">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("h3")}</p>
       <form onSubmit={handleSubmit} className="space-y-4 max-w-lg text-sm">

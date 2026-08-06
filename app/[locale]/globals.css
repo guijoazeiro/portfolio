@@ -20,15 +20,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 /* ---------- Links: animated left→right underline ---------- */
 a.link {
   color: var(--link);
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
@@ -37,6 +35,11 @@ a.link {
   padding-bottom: 2px;
   transition: color 180ms ease, background-size 240ms ease;
   will-change: background-size;
+}
+
+a.link svg {
+  display: inline;
+  vertical-align: -0.125em;
 }
 
 a.link:hover,

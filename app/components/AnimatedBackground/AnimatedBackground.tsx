@@ -6,6 +6,7 @@ import { useMouseParallax } from "./useMouseParallax";
 import { Blob } from "./Blob";
 import { Spotlight } from "./Spotlight";
 import { Grain } from "./Grain";
+import { BackgroundLogs } from "./BackgroundLogs";
 import { BG_BLOBS, BG_SMOOTHING } from "./constants";
 
 export const AnimatedBackground = () => {
@@ -14,6 +15,7 @@ export const AnimatedBackground = () => {
 
   return (
     <div ref={rootRef} aria-hidden className={styles.root}>
+      <BackgroundLogs />
       <div className={styles.blobsLayer}>
         {BG_BLOBS.map((blob) => (
           <Blob key={blob.id} config={blob} />
