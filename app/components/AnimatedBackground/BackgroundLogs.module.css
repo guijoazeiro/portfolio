@@ -1,0 +1,66 @@
+.root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  filter: blur(0.4px);
+  z-index: 0;
+}
+
+.parallax {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform: translate3d(
+    calc(var(--mx-px, 0) * 10px),
+    calc(var(--my-px, 0) * 10px),
+    0
+  );
+}
+
+.log {
+  position: absolute;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0;
+  white-space: nowrap;
+  letter-spacing: 0;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  animation-name: logRise;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@keyframes logRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    opacity: var(--peak-op, 0.1);
+  }
+  85% {
+    opacity: var(--peak-op, 0.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift-x, 0), var(--rise-y, -80px), 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .log {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    display: none;
+  }
+}

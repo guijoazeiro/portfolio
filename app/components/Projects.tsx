@@ -6,7 +6,7 @@ const Projects = () => {
   const keys = ["First", "Second", "Third", "Fourth"] as const;
 
   return (
-    <section className="mb-24 reveal" id="projects">
+    <section className="mb-16 md:mb-24 reveal" id="projects">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("sub")}</p>
       <div className="space-y-10">

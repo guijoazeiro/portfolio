@@ -5,7 +5,7 @@ const Experience = () => {
   const keys = ["First", "Second", "Third"] as const;
 
   return (
-    <section className="mb-24 reveal" id="experience">
+    <section className="mb-16 md:mb-24 reveal" id="experience">
       <h2 className="section-title">{t("h1")}</h2>
       <div className="space-y-12 mt-8">
         {keys.map((exp) => {

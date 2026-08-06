@@ -6,7 +6,7 @@ const Articles = () => {
   const keys = ["First", "Second", "Third"] as const;
 
   return (
-    <section className="mb-24 reveal" id="articles">
+    <section className="mb-16 md:mb-24 reveal" id="articles">
       <h2 className="section-title">{t("h1")}</h2>
       <p className="section-sub">{t("sub")}</p>
       <div className="space-y-10">
@@ -19,8 +19,8 @@ const Articles = () => {
               rel="noopener noreferrer"
               aria-label={t("ArticleLinkAriaLabel")}
             >
-              <FiArrowUpRight aria-hidden />
-              <span>{t(`${article}.title`)}</span>
+              <FiArrowUpRight aria-hidden className="mr-1.5" />
+              {t(`${article}.title`)}
             </a>
             <p className="text-xs text-[var(--muted)] mt-2 tracking-wider">
               {t(`${article}.date`)} • {t(`${article}.readingTime`)}
