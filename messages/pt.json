@@ -120,31 +120,30 @@
     },
     "Second": {
       "id": "2",
-      "title": "Papelaria API",
-      "description": "API de e-commerce feita com NestJS, Postgres e AWS S3.",
+      "title": "Docs Editor",
+      "description": "Um editor de documentos colaborativo inspirado no Google Docs.",
       "technologies": [
-        "TypeScript",
-        "Node.js",
-        "Postgres",
-        "AWS S3",
+        "Golang",
+        "Next.js",
+        "Postgres",        
         "Docker",
-        "JWT",
-        "Swagger"
+        "YJS",
+        "Websocket"
       ],
-      "githubLink": "https://github.com/guijoazeiro/papelaria-api"
+      "githubLink": "https://github.com/guijoazeiro/docs-editor"
     },
     "Third": {
       "id": "3",
-      "title": "SpotTube",
-      "description": "Conversor de playlists entre YouTube e Spotify.",
+      "title": "MiniPaaS",
+      "description": "A minimal Platform as a Service for deploying applications.",
       "technologies": [
-        "TypeScript",
-        "Node.js",
+        "Golang",
+        "Next.js",
         "Postgres",
-        "JWT",
-        "Swagger"
+        "Docker",
+        "Caddy"
       ],
-      "githubLink": "https://github.com/guijoazeiro/spottube"
+      "githubLink": "https://github.com/guijoazeiro/MiniPaaS"
     },
     "Fourth": {
       "id": "4",
