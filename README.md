@@ -36,3 +36,19 @@ bun dev
 ```
 
 Abra http://localhost:3000 no seu navegador para ver o resultado.
+
+## URL de produção
+
+O SEO usa `https://portfolio-phi-swart-29.vercel.app` por padrão. Caso o site seja
+publicado em outro domínio, configure a variável `SITE_URL` no ambiente de deploy:
+
+```bash
+SITE_URL=https://seu-dominio.com
+```
+
+Para validar o site por meta tag no Google Search Console, configure também apenas
+o token fornecido pelo Google (sem a tag HTML completa):
+
+```bash
+GOOGLE_SITE_VERIFICATION=seu-token-de-verificacao
+```
