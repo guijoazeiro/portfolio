@@ -4,8 +4,10 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Guilherme Joazeiro",
     short_name: "gjoazeiro",
-    description: "Backend developer portfolio",
-    start_url: "/",
+    description:
+      "Portfolio of Guilherme Joazeiro, Backend Engineer specialized in APIs and microservices.",
+    start_url: "/pt",
+    scope: "/",
     display: "standalone",
     background_color: "#09090B",
     theme_color: "#09090B",
