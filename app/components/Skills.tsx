@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { Fragment } from "react";
 import { stackGroups } from "../../constants/constants";
 
 const Skills = () => {
@@ -14,12 +13,12 @@ const Skills = () => {
             className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-x-6 gap-y-1"
           >
             <div className="stack-label pt-[3px]">{group.label}</div>
-            <div className="stack-items">
+            <div className="stack-items flex flex-wrap gap-x-3 gap-y-1">
               {group.items.map((item, i) => (
-                <Fragment key={item}>
+                <span key={item} className="whitespace-nowrap">
                   {i > 0 && <span className="sep">·</span>}
-                  <span className="whitespace-nowrap">{item}</span>
-                </Fragment>
+                  {item}
+                </span>
               ))}
             </div>
           </div>

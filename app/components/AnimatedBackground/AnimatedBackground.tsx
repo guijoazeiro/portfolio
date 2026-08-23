@@ -1,28 +1,19 @@
-"use client";
-
-import { useRef } from "react";
 import styles from "./animations.module.css";
-import { useMouseParallax } from "./useMouseParallax";
-import { Blob } from "./Blob";
-import { Spotlight } from "./Spotlight";
-import { Grain } from "./Grain";
-import { BackgroundLogs } from "./BackgroundLogs";
-import { BG_BLOBS, BG_SMOOTHING } from "./constants";
+import { OrbitalSphereBackground } from "./OrbitalSphereBackground";
 
 export const AnimatedBackground = () => {
-  const rootRef = useRef<HTMLDivElement>(null);
-  useMouseParallax(rootRef, { smoothing: BG_SMOOTHING });
-
   return (
-    <div ref={rootRef} aria-hidden className={styles.root}>
-      <BackgroundLogs />
-      <div className={styles.blobsLayer}>
-        {BG_BLOBS.map((blob) => (
-          <Blob key={blob.id} config={blob} />
-        ))}
-      </div>
-      <Spotlight />
-      <Grain />
+    <div aria-hidden className={styles.root}>
+      <OrbitalSphereBackground
+        className={styles.orbital}
+        speed={1.10}
+        particleSize={0.020}
+        particleOpacity={0.42}
+        orbitOpacity={0.16}
+        scale={1.00}
+        haloOpacity={0.12}
+      />
+      <div className={styles.readabilityShade} />
     </div>
   );
 };
