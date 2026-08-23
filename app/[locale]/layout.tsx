@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { AnimatedBackground } from "../components/AnimatedBackground";
+import { BlinkingFavicon } from "../components/BlinkingFavicon";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -115,6 +116,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={jetbrainsMono.className}>
+        <BlinkingFavicon />
         <NextIntlClientProvider messages={messages}>
           <AnimatedBackground />
           <div className="relative z-10 min-h-screen text-gray-300 fade-in">
