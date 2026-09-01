@@ -9,7 +9,8 @@ import { usePathname, useRouter } from "@/navigation";
 type Locale = "pt" | "en";
 type TerminalCommand =
   | "help"
-  | "whoami"
+  | "about"
+  | "status"
   | "experience"
   | "projects"
   | "skills"
@@ -19,13 +20,13 @@ type TerminalCommand =
   | "clear";
 
 type ParsedCommand =
-  | { type: TerminalCommand }
+  | { type: TerminalCommand; helpLanguage?: Locale }
   | { type: "lang"; locale: Locale }
   | { type: "invalid" };
 
 type TerminalLine = {
   id: number;
-  kind: "command" | "output" | "error" | "link";
+  kind: "command" | "output" | "error" | "link" | "status";
   text: string;
   href?: string;
   download?: boolean;
@@ -35,10 +36,9 @@ const MAX_COMMAND_HISTORY = 24;
 const MAX_TERMINAL_LINES = 80;
 
 const commandAliases: Record<string, TerminalCommand> = {
-  help: "help",
-  ajuda: "help",
-  whoami: "whoami",
-  sobre: "whoami",
+  about: "about",
+  sobre: "about",
+  "./status.sh": "status",
   experience: "experience",
   experiencia: "experience",
   projects: "projects",
@@ -66,11 +66,15 @@ function parseCommand(value: string): ParsedCommand {
   const tokens = normalizeCommand(value).split(/\s+/).filter(Boolean);
   const [command, argument] = tokens;
 
-  if (command === "lang" && tokens.length === 2) {
+  if ((command === "lang" || command === "idioma") && tokens.length === 2) {
     if (argument === "pt" || argument === "en") {
       return { type: "lang", locale: argument };
     }
     return { type: "invalid" };
+  }
+
+  if (tokens.length === 1 && (command === "help" || command === "ajuda")) {
+    return { type: "help", helpLanguage: command === "ajuda" ? "pt" : "en" };
   }
 
   if (tokens.length === 1 && command in commandAliases) {
@@ -85,29 +89,43 @@ const Hero = () => {
   const pathname = usePathname();
   const router = useRouter();
   const tHero = useTranslations("Hero");
-  const tAbout = useTranslations("About");
   const tExperience = useTranslations("Experience");
   const tProjects = useTranslations("Projects");
   const tTerminal = useTranslations("Terminal");
   const inputRef = useRef<HTMLInputElement>(null);
+  const logRef = useRef<HTMLDivElement>(null);
   const nextLineId = useRef(1);
   const [command, setCommand] = useState("");
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [lines, setLines] = useState<TerminalLine[]>(() => [
-    { id: 0, kind: "output", text: tTerminal("welcome") },
-  ]);
+  const [lines, setLines] = useState<TerminalLine[]>(() => createInitialLines());
 
   const githubUrl = "https://github.com/guijoazeiro";
   const linkedinUrl = "https://www.linkedin.com/in/guilherme-joazeiro";
   const resumeHref = `/${tHero("cvlink")}`;
 
   useEffect(() => {
-    setLines([{ id: nextLineId.current++, kind: "output", text: tTerminal("welcome") }]);
+    setLines(createInitialLines());
     setCommand("");
     setCommandHistory([]);
     setHistoryIndex(-1);
-  }, [locale, tTerminal("welcome")]);
+  }, [locale]);
+
+  useEffect(() => {
+    const log = logRef.current;
+    if (!log) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      log.scrollTo({
+        top: log.scrollHeight,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [lines]);
 
   function createLine(
     kind: TerminalLine["kind"],
@@ -115,6 +133,15 @@ const Hero = () => {
     options: Pick<TerminalLine, "href" | "download"> = {},
   ): TerminalLine {
     return { id: nextLineId.current++, kind, text, ...options };
+  }
+
+  function createInitialLines(): TerminalLine[] {
+    return [
+      createLine("command", tTerminal("initialAboutCommand")),
+      createLine("output", tTerminal("aboutResponse")),
+      createLine("command", tTerminal("statusCommand")),
+      createLine("status", tTerminal("statusMessage")),
+    ];
   }
 
   function scrollToSection(id: "experience" | "projects" | "skills" | "contact") {
@@ -134,7 +161,7 @@ const Hero = () => {
     const parsed = parseCommand(rawCommand);
 
     if (parsed.type === "clear") {
-      setLines([]);
+      setLines(createInitialLines());
       return;
     }
 
@@ -142,15 +169,18 @@ const Hero = () => {
 
     switch (parsed.type) {
       case "help":
-        response = [createLine("output", tTerminal("help"))];
-        break;
-      case "whoami":
         response = [
-          createLine("output", tHero("name")),
-          createLine("output", tHero("role")),
-          createLine("output", tHero("stack")),
-          createLine("output", tAbout("p1")),
+          createLine(
+            "output",
+            tTerminal(parsed.helpLanguage === "pt" ? "helpPortuguese" : "helpEnglish"),
+          ),
         ];
+        break;
+      case "about":
+        response = [createLine("output", tTerminal("aboutResponse"))];
+        break;
+      case "status":
+        response = [createLine("status", tTerminal("statusMessage"))];
         break;
       case "experience":
         scrollToSection("experience");
@@ -233,8 +263,7 @@ const Hero = () => {
     ].slice(-MAX_TERMINAL_LINES));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function submitCommand() {
     const rawCommand = command.trim();
     if (!rawCommand) return;
 
@@ -246,7 +275,18 @@ const Hero = () => {
     executeCommand(rawCommand);
   }
 
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    submitCommand();
+  }
+
   function handleInputKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      submitCommand();
+      return;
+    }
+
     if (event.key === "ArrowUp") {
       event.preventDefault();
       if (commandHistory.length === 0) return;
@@ -270,6 +310,12 @@ const Hero = () => {
       setHistoryIndex(nextIndex);
       setCommand(commandHistory[nextIndex]);
     }
+  }
+
+  function focusTerminalInput(event: React.MouseEvent<HTMLElement>) {
+    const target = event.target as HTMLElement;
+    if (target.closest("a, input, button")) return;
+    inputRef.current?.focus();
   }
 
   return (
@@ -322,12 +368,30 @@ const Hero = () => {
           </section>
         </div>
 
-        <section className="hero-terminal" aria-labelledby="hero-terminal-title">
+        <section
+          className="hero-terminal"
+          aria-labelledby="hero-terminal-title"
+          onClick={focusTerminalInput}
+        >
           <div className="hero-terminal__bar">
-            <span className="hero-terminal__dot" aria-hidden="true" />
+            <div className="hero-terminal__controls" aria-hidden="true">
+              <span
+                className="hero-terminal__dot hero-terminal__dot--red"
+                aria-hidden="true"
+              />
+              <span
+                className="hero-terminal__dot hero-terminal__dot--yellow"
+                aria-hidden="true"
+              />
+              <span
+                className="hero-terminal__dot hero-terminal__dot--green"
+                aria-hidden="true"
+              />
+            </div>
             <h2 id="hero-terminal-title">{tTerminal("title")}</h2>
           </div>
           <div
+            ref={logRef}
             className="hero-terminal__log"
             role="log"
             aria-live="polite"
@@ -356,31 +420,26 @@ const Hero = () => {
                 )}
               </div>
             ))}
-          </div>
-          <form className="hero-terminal__form" onSubmit={handleSubmit}>
-            <label className="sr-only" htmlFor="hero-terminal-input">
-              {tTerminal("inputLabel")}
-            </label>
-            <span className="terminal-prompt" aria-hidden="true">
-              {tTerminal("prompt")}
-            </span>
-            <input
-              ref={inputRef}
-              id="hero-terminal-input"
-              className="hero-terminal__input"
-              value={command}
-              onChange={(event) => setCommand(event.target.value)}
-              onKeyDown={handleInputKeyDown}
-              autoComplete="off"
-              spellCheck={false}
-              aria-describedby="hero-terminal-title"
-            />
-            {!command && (
-              <span className="terminal-cursor" aria-hidden="true">
-                _
+            <form className="hero-terminal__form" onSubmit={handleSubmit}>
+              <label className="sr-only" htmlFor="hero-terminal-input">
+                {tTerminal("inputLabel")}
+              </label>
+              <span className="terminal-prompt" aria-hidden="true">
+                {tTerminal("prompt")}
               </span>
-            )}
-          </form>
+              <input
+                ref={inputRef}
+                id="hero-terminal-input"
+                className="hero-terminal__input"
+                value={command}
+                onChange={(event) => setCommand(event.target.value)}
+                onKeyDown={handleInputKeyDown}
+                autoComplete="off"
+                spellCheck={false}
+                aria-describedby="hero-terminal-title"
+              />
+            </form>
+          </div>
         </section>
       </div>
     </header>
