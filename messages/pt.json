@@ -3,7 +3,7 @@
     "home": {
       "id": 1,
       "href": "/",
-      "text": "Home"
+      "text": "Início"
     },
     "about": {
       "id": 2,
@@ -34,6 +34,17 @@
       "id": 7,
       "href": "#contact",
       "text": "Contato"
+    },
+    "github": {
+      "text": "GitHub"
+    },
+    "ariaLabel": "Navegação principal",
+    "languageLabel": "Idioma",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "language": {
+      "pt": "Português",
+      "en": "Inglês"
     }
   },
   "Hero": {

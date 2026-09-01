@@ -34,6 +34,17 @@
       "id": 7,
       "href": "#contact",
       "text": "Contact"
+    },
+    "github": {
+      "text": "GitHub"
+    },
+    "ariaLabel": "Main navigation",
+    "languageLabel": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": {
+      "pt": "Portuguese",
+      "en": "English"
     }
   },
   "Hero": {
