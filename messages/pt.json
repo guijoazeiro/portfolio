@@ -49,6 +49,7 @@
   },
   "Hero": {
     "name": "Guilherme Joazeiro",
+    "description": "Backend Engineer há mais de 3 anos, criando APIs, microsserviços e sistemas escaláveis. Atuo da arquitetura ao deploy, com foco em performance, segurança e qualidade.",
     "h1": "Olá, sou",
     "words": " Desenvolvedor Backend",
     "role": "Backend Engineer",
@@ -64,7 +65,6 @@
   },
   "Terminal": {
     "title": "Terminal",
-    "identityLabel": "Identidade",
     "introductionLabel": "Apresentação",
     "logLabel": "Saída do terminal",
     "inputLabel": "Comando do terminal",

@@ -277,12 +277,8 @@ const Hero = () => {
       <div className="hero-layout">
         <div className="hero-cards">
           <section className="hero-card hero-identity" aria-labelledby="hero-name">
-            <p className="hero-eyebrow">{tTerminal("identityLabel")}</p>
             <h1 id="hero-name" className="hero-name">
               {tHero("name")}
-              <span className="hero-cursor" aria-hidden="true">
-                _
-              </span>
             </h1>
             <p className="hero-role">{tHero("role")}</p>
           </section>
@@ -291,7 +287,7 @@ const Hero = () => {
             <h2 id="hero-intro-title" className="sr-only">
               {tTerminal("introductionLabel")}
             </h2>
-            <p className="hero-description">{tAbout("p1")}</p>
+            <p className="hero-description">{tHero("description")}</p>
             <div className="hero-links">
               <a
                 className="link inline-flex items-center gap-2"

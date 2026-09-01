@@ -49,6 +49,7 @@
   },
   "Hero": {
     "name": "Guilherme Joazeiro",
+    "description": "Backend Engineer with 3+ years building APIs, microservices, and scalable systems. I work from architecture to deployment, focusing on performance, security, and quality.",
     "h1": "Hello, I'm",
     "words": " Backend Developer",
     "role": "Backend Engineer",
@@ -64,7 +65,6 @@
   },
   "Terminal": {
     "title": "Terminal",
-    "identityLabel": "Identity",
     "introductionLabel": "Introduction",
     "logLabel": "Terminal output",
     "inputLabel": "Terminal command",
