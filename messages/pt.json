@@ -48,13 +48,44 @@
     }
   },
   "Hero": {
+    "name": "Guilherme Joazeiro",
     "h1": "Olá, sou",
     "words": " Desenvolvedor Backend",
     "role": "Backend Engineer",
     "stack": "Node.js • TypeScript • Go • Python",
     "cv": "Baixar CV",
+    "cvLabel": "Baixar currículo",
+    "github": "GitHub",
+    "githubLabel": "Abrir perfil do GitHub",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "Abrir perfil do LinkedIn",
     "contact": "Contato",
-    "cvlink": "curriculoGuilhermeJoazeiro.pdf"
+    "cvlink": "CurriculoGuilhermeJoazeiro.pdf"
+  },
+  "Terminal": {
+    "title": "Terminal",
+    "identityLabel": "Identidade",
+    "introductionLabel": "Apresentação",
+    "logLabel": "Saída do terminal",
+    "inputLabel": "Comando do terminal",
+    "prompt": "guilherme@portfolio:~$",
+    "welcome": "Terminal pronto. Digite help ou ajuda para ver os comandos.",
+    "help": "Comandos: help/ajuda • whoami/sobre • experience/experiencia • projects/projetos • skills/habilidades • github • contact/contato • resume/curriculo • clear/limpar • lang pt • lang en",
+    "experience": "Experiências disponíveis:",
+    "projects": "Projetos disponíveis:",
+    "skills": "Stack principal:",
+    "github": "Abrindo o perfil do GitHub.",
+    "githubLink": "Abrir perfil do GitHub",
+    "contact": "Rolando até a seção de contato.",
+    "resume": "Abrindo o currículo.",
+    "resumeLink": "Baixar currículo",
+    "invalidCommand": "Comando inválido. Digite help ou ajuda.",
+    "languageAlready": "O idioma já está definido como {language}.",
+    "languageChanged": "Idioma alterado para {language}.",
+    "language": {
+      "pt": "português",
+      "en": "inglês"
+    }
   },
   "About": {
     "h1": "Sobre",

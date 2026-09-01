@@ -48,13 +48,44 @@
     }
   },
   "Hero": {
+    "name": "Guilherme Joazeiro",
     "h1": "Hello, I'm",
     "words": " Backend Developer",
     "role": "Backend Engineer",
     "stack": "Node.js • TypeScript • Go • Python",
     "cv": "Download CV",
+    "cvLabel": "Download resume",
+    "github": "GitHub",
+    "githubLabel": "Open GitHub profile",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "Open LinkedIn profile",
     "contact": "Contact",
-    "cvlink": "curriculumGuilhermeJoazeiro.pdf"
+    "cvlink": "CurriculumGuilhermeJoazeiro.pdf"
+  },
+  "Terminal": {
+    "title": "Terminal",
+    "identityLabel": "Identity",
+    "introductionLabel": "Introduction",
+    "logLabel": "Terminal output",
+    "inputLabel": "Terminal command",
+    "prompt": "guilherme@portfolio:~$",
+    "welcome": "Terminal ready. Type help or ajuda to see the commands.",
+    "help": "Commands: help/ajuda • whoami/sobre • experience/experiencia • projects/projetos • skills/habilidades • github • contact/contato • resume/curriculo • clear/limpar • lang pt • lang en",
+    "experience": "Available experience:",
+    "projects": "Available projects:",
+    "skills": "Main stack:",
+    "github": "Opening the GitHub profile.",
+    "githubLink": "Open GitHub profile",
+    "contact": "Scrolling to the contact section.",
+    "resume": "Opening the resume.",
+    "resumeLink": "Download resume",
+    "invalidCommand": "Invalid command. Type help or ajuda.",
+    "languageAlready": "The language is already set to {language}.",
+    "languageChanged": "Language changed to {language}.",
+    "language": {
+      "pt": "Portuguese",
+      "en": "English"
+    }
   },
   "About": {
     "h1": "About",
