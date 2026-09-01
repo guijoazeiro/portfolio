@@ -40,16 +40,12 @@ const commandAliases: Record<string, TerminalCommand> = {
   sobre: "about",
   "./status.sh": "status",
   experience: "experience",
-  experiencia: "experience",
   projects: "projects",
   projetos: "projects",
   skills: "skills",
   habilidades: "skills",
-  github: "github",
   contact: "contact",
-  contato: "contact",
   resume: "resume",
-  curriculo: "resume",
   clear: "clear",
   limpar: "clear",
 };
@@ -66,7 +62,7 @@ function parseCommand(value: string): ParsedCommand {
   const tokens = normalizeCommand(value).split(/\s+/).filter(Boolean);
   const [command, argument] = tokens;
 
-  if ((command === "lang" || command === "idioma") && tokens.length === 2) {
+  if (command === "lang" && tokens.length === 2) {
     if (argument === "pt" || argument === "en") {
       return { type: "lang", locale: argument };
     }
@@ -206,13 +202,6 @@ const Hero = () => {
         response = [
           createLine("output", tTerminal("skills")),
           createLine("output", tHero("stack")),
-        ];
-        break;
-      case "github":
-        openExternal(githubUrl);
-        response = [
-          createLine("output", tTerminal("github")),
-          createLine("link", tTerminal("githubLink"), { href: githubUrl }),
         ];
         break;
       case "contact":
