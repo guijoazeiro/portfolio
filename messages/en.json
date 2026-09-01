@@ -73,6 +73,7 @@
     "aboutResponse": "guilherme — backend engineer",
     "statusCommand": "./status.sh",
     "statusMessage": "● open to work",
+    "hint": "Type `help` to take a look.",
     "helpEnglish": "Available commands:\nhelp\nabout\n./status.sh\nprojects\nskills\nclear",
     "helpPortuguese": "Comandos disponíveis:\najuda\nsobre\n./status.sh\nprojetos\nhabilidades\nlimpar",
     "projects": "Available projects:",

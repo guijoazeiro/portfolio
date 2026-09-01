@@ -315,6 +315,11 @@ section[id] {
   color: #4ade80;
 }
 
+.terminal-line--hint {
+  color: var(--muted);
+  font-style: italic;
+}
+
 .terminal-line--error {
   color: var(--link-hover);
 }

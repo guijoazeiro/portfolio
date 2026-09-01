@@ -19,7 +19,7 @@ type ParsedCommand =
 
 type TerminalLine = {
   id: number;
-  kind: "command" | "output" | "error" | "link" | "status";
+  kind: "command" | "output" | "error" | "link" | "status" | "hint";
   text: string;
   href?: string;
   download?: boolean;
@@ -134,6 +134,7 @@ const Hero = () => {
       createLine("output", tTerminal("aboutResponse")),
       createLine("command", tTerminal("statusCommand")),
       createLine("status", tTerminal("statusMessage")),
+      createLine("hint", tTerminal("hint")),
     ];
   }
 
