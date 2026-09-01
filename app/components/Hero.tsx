@@ -4,24 +4,17 @@ import { useLocale, useTranslations } from "next-intl";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { FiFileText } from "react-icons/fi";
-import { usePathname, useRouter } from "@/navigation";
 
-type Locale = "pt" | "en";
 type TerminalCommand =
   | "help"
   | "about"
   | "status"
-  | "experience"
   | "projects"
   | "skills"
-  | "github"
-  | "contact"
-  | "resume"
   | "clear";
 
 type ParsedCommand =
-  | { type: TerminalCommand; helpLanguage?: Locale }
-  | { type: "lang"; locale: Locale }
+  | { type: TerminalCommand; helpLanguage?: "pt" | "en" }
   | { type: "invalid" };
 
 type TerminalLine = {
@@ -39,13 +32,10 @@ const commandAliases: Record<string, TerminalCommand> = {
   about: "about",
   sobre: "about",
   "./status.sh": "status",
-  experience: "experience",
   projects: "projects",
   projetos: "projects",
   skills: "skills",
   habilidades: "skills",
-  contact: "contact",
-  resume: "resume",
   clear: "clear",
   limpar: "clear",
 };
@@ -60,14 +50,7 @@ function normalizeCommand(value: string) {
 
 function parseCommand(value: string): ParsedCommand {
   const tokens = normalizeCommand(value).split(/\s+/).filter(Boolean);
-  const [command, argument] = tokens;
-
-  if (command === "lang" && tokens.length === 2) {
-    if (argument === "pt" || argument === "en") {
-      return { type: "lang", locale: argument };
-    }
-    return { type: "invalid" };
-  }
+  const [command] = tokens;
 
   if (tokens.length === 1 && (command === "help" || command === "ajuda")) {
     return { type: "help", helpLanguage: command === "ajuda" ? "pt" : "en" };
@@ -81,16 +64,15 @@ function parseCommand(value: string): ParsedCommand {
 }
 
 const Hero = () => {
-  const locale = useLocale() as Locale;
-  const pathname = usePathname();
-  const router = useRouter();
+  const locale = useLocale();
   const tHero = useTranslations("Hero");
-  const tExperience = useTranslations("Experience");
   const tProjects = useTranslations("Projects");
   const tTerminal = useTranslations("Terminal");
+  const cardsRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const logRef = useRef<HTMLDivElement>(null);
   const nextLineId = useRef(1);
+  const [cardsHeight, setCardsHeight] = useState<number | null>(null);
   const [command, setCommand] = useState("");
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -105,6 +87,21 @@ const Hero = () => {
     setCommand("");
     setCommandHistory([]);
     setHistoryIndex(-1);
+  }, [locale]);
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    if (!cards || typeof ResizeObserver === "undefined") return;
+
+    const updateCardsHeight = () => {
+      setCardsHeight(cards.getBoundingClientRect().height);
+    };
+
+    updateCardsHeight();
+    const observer = new ResizeObserver(updateCardsHeight);
+    observer.observe(cards);
+
+    return () => observer.disconnect();
   }, [locale]);
 
   useEffect(() => {
@@ -140,17 +137,13 @@ const Hero = () => {
     ];
   }
 
-  function scrollToSection(id: "experience" | "projects" | "skills" | "contact") {
+  function scrollToSection(id: "projects" | "skills") {
     document.getElementById(id)?.scrollIntoView({
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
         ? "auto"
         : "smooth",
       block: "start",
     });
-  }
-
-  function openExternal(url: string) {
-    window.open(url, "_blank", "noopener,noreferrer");
   }
 
   function executeCommand(rawCommand: string) {
@@ -178,15 +171,6 @@ const Hero = () => {
       case "status":
         response = [createLine("status", tTerminal("statusMessage"))];
         break;
-      case "experience":
-        scrollToSection("experience");
-        response = [
-          createLine("output", tTerminal("experience")),
-          createLine("output", tExperience("First.company")),
-          createLine("output", tExperience("Second.company")),
-          createLine("output", tExperience("Third.company")),
-        ];
-        break;
       case "projects":
         scrollToSection("projects");
         response = [
@@ -203,42 +187,6 @@ const Hero = () => {
           createLine("output", tTerminal("skills")),
           createLine("output", tHero("stack")),
         ];
-        break;
-      case "contact":
-        scrollToSection("contact");
-        response = [createLine("output", tTerminal("contact"))];
-        break;
-      case "resume":
-        openExternal(resumeHref);
-        response = [
-          createLine("output", tTerminal("resume")),
-          createLine("link", tTerminal("resumeLink"), {
-            href: resumeHref,
-            download: true,
-          }),
-        ];
-        break;
-      case "lang":
-        if (parsed.locale === locale) {
-          response = [
-            createLine(
-              "output",
-              tTerminal("languageAlready", {
-                language: tTerminal(`language.${parsed.locale}`),
-              }),
-            ),
-          ];
-        } else {
-          router.push(pathname, { locale: parsed.locale });
-          response = [
-            createLine(
-              "output",
-              tTerminal("languageChanged", {
-                language: tTerminal(`language.${parsed.locale}`),
-              }),
-            ),
-          ];
-        }
         break;
       case "invalid":
         response = [createLine("error", tTerminal("invalidCommand"))];
@@ -310,7 +258,7 @@ const Hero = () => {
   return (
     <header className="hero mb-16 md:mb-24">
       <div className="hero-layout">
-        <div className="hero-cards">
+        <div ref={cardsRef} className="hero-cards">
           <section className="hero-card hero-identity" aria-labelledby="hero-name">
             <h1 id="hero-name" className="hero-name">
               {tHero("name")}
@@ -361,6 +309,7 @@ const Hero = () => {
           className="hero-terminal"
           aria-labelledby="hero-terminal-title"
           onClick={focusTerminalInput}
+          style={cardsHeight ? { height: `${cardsHeight}px` } : undefined}
         >
           <div className="hero-terminal__bar">
             <div className="hero-terminal__controls" aria-hidden="true">

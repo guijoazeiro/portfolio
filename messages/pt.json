@@ -73,21 +73,11 @@
     "aboutResponse": "guilherme — backend engineer",
     "statusCommand": "./status.sh",
     "statusMessage": "● open to work",
-    "helpEnglish": "Available commands:\nhelp\nabout\n./status.sh\nexperience\nprojects\nskills\ngithub\ncontact\nresume\nclear\nlang pt\nlang en",
+    "helpEnglish": "Available commands:\nhelp\nabout\n./status.sh\nprojects\nskills\nclear",
     "helpPortuguese": "Comandos disponíveis:\najuda\nsobre\n./status.sh\nprojetos\nhabilidades\nlimpar",
-    "experience": "Experiências disponíveis:",
     "projects": "Projetos disponíveis:",
     "skills": "Stack principal:",
-    "contact": "Rolando até a seção de contato.",
-    "resume": "Abrindo o currículo.",
-    "resumeLink": "Baixar currículo",
-    "invalidCommand": "Comando inválido. Digite ajuda para ver os comandos.",
-    "languageAlready": "O idioma já está definido como {language}.",
-    "languageChanged": "Idioma alterado para {language}.",
-    "language": {
-      "pt": "português",
-      "en": "inglês"
-    }
+    "invalidCommand": "Comando inválido. Digite ajuda para ver os comandos."
   },
   "About": {
     "h1": "Sobre",
