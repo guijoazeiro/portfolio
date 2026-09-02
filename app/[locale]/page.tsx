@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Articles from "../components/Articles";
+import GithubContributions from "../components/GithubContributions";
 
 export default function Home({
   params: { locale },
@@ -21,6 +22,7 @@ export default function Home({
       <About />
       <Experience />
       <Projects />
+      <GithubContributions locale={locale} />
       <Articles />
       <Contact />
     </main>

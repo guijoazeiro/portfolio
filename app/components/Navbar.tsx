@@ -5,15 +5,31 @@ import { Link, usePathname, useRouter } from "@/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type Locale = "pt" | "en";
-type SectionKey = "home" | "stack" | "experience" | "projects" | "contact";
+type SectionKey =
+  | "home"
+  | "stack"
+  | "experience"
+  | "projects"
+  | "github"
+  | "contact";
 
 const sectionKeys: SectionKey[] = [
   "home",
   "stack",
   "experience",
   "projects",
+  "github",
   "contact",
 ];
+
+const sectionIds: Record<SectionKey, string> = {
+  home: "home",
+  stack: "stack",
+  experience: "experience",
+  projects: "projects",
+  github: "github-contributions",
+  contact: "contact",
+};
 
 export default function Navbar() {
   const locale = useLocale() as Locale;
@@ -41,7 +57,7 @@ export default function Navbar() {
     if (home) sections.set(home, "home");
 
     sectionKeys.slice(1).forEach((key) => {
-      const section = document.getElementById(key);
+      const section = document.getElementById(sectionIds[key]);
       if (section) sections.set(section, key);
     });
 
@@ -126,10 +142,9 @@ export default function Navbar() {
       label: t("projects.text"),
     },
     {
-      key: "home",
-      href: "https://github.com/guijoazeiro",
+      key: "github",
+      href: t("github.href"),
       label: t("github.text"),
-      external: true,
     },
     {
       key: "contact",

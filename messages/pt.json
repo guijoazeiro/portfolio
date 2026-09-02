@@ -36,6 +36,7 @@
       "text": "Contato"
     },
     "github": {
+      "href": "#github-contributions",
       "text": "GitHub"
     },
     "ariaLabel": "Navegação principal",
@@ -194,6 +195,20 @@
       ],
       "githubLink": "https://github.com/guijoazeiro/conversion-microservice"
     }
+  },
+  "GithubContributions": {
+    "h1": "Contribuições no GitHub",
+    "activity": "ATIVIDADE",
+    "profile": "PERFIL",
+    "profileFallback": "VER PERFIL NO GITHUB",
+    "profileAriaLabel": "Abrir perfil do GitHub em uma nova aba",
+    "total": "{total} CONTRIBUIÇÕES",
+    "calendarLabel": "Calendário de contribuições do GitHub",
+    "cellLabel": "{count} contribuições em {date}",
+    "accessibilitySummary": "Calendário com {total} contribuições no período exibido.",
+    "scrollHint": "Deslize para ver o histórico →",
+    "loading": "Carregando contribuições",
+    "error": "Não foi possível carregar as contribuições agora."
   },
   "Articles": {
     "h1": "Artigos",
