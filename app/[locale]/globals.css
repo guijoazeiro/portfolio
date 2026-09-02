@@ -712,11 +712,29 @@ a.link:focus-visible {
 }
 
 .experience-row__company {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
   overflow-wrap: anywhere;
   color: var(--heading);
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+.experience-row__company > span {
+  min-width: 0;
+}
+
+.experience-row__logo {
+  width: 1.625rem;
+  height: 1.625rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(63, 63, 70, 0.72);
+  border-radius: 0.45rem;
+  background: rgba(24, 24, 27, 0.72);
+  object-fit: cover;
 }
 
 .experience-row--open .experience-row__company {

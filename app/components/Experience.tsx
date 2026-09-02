@@ -1,11 +1,18 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
 const experienceKeys = ["First", "Second", "Third"] as const;
 type ExperienceKey = (typeof experienceKeys)[number];
+
+const experienceLogos: Record<ExperienceKey, string> = {
+  First: "/experience/greens-corp-logo.jpeg",
+  Second: "/experience/ttms-technologies-logo.jpeg",
+  Third: "/experience/adin-marketing-digital-logo.jpeg",
+};
 
 const Experience = () => {
   const t = useTranslations("Experience");
@@ -53,7 +60,15 @@ const Experience = () => {
               >
                 <span className="experience-row__main">
                   <span className="experience-row__company">
-                    {t(`${experience}.company`)}
+                    <Image
+                      className="experience-row__logo"
+                      src={experienceLogos[experience]}
+                      alt=""
+                      aria-hidden="true"
+                      width={26}
+                      height={26}
+                    />
+                    <span>{t(`${experience}.company`)}</span>
                   </span>
                   <span className="experience-row__role">
                     {t(`${experience}.role`)}
