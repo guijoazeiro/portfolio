@@ -137,7 +137,7 @@
   "Projects": {
     "h1": "Projects",
     "sub": "A few things I've been building.",
-    "ProjectLinkAriaLabel": "Link to project GitHub repository",
+    "ProjectLinkAriaLabel": "Open {project} in a new tab",
     "First": {
       "id": "1",
       "title": "Microservices Communication",

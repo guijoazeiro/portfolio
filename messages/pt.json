@@ -137,7 +137,7 @@
   "Projects": {
     "h1": "Projetos",
     "sub": "Algumas coisas que venho construindo.",
-    "ProjectLinkAriaLabel": "Link para o repositório do GitHub do projeto",
+    "ProjectLinkAriaLabel": "Abrir {project} em uma nova aba",
     "First": {
       "id": "1",
       "title": "Comunicação entre Microsserviços",
@@ -170,7 +170,7 @@
     "Third": {
       "id": "3",
       "title": "MiniPaaS",
-      "description": "A minimal Platform as a Service for deploying applications.",
+      "description": "Uma Platform as a Service minimalista para deploy de aplicações.",
       "technologies": [
         "Golang",
         "Next.js",
