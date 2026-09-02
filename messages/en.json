@@ -279,5 +279,12 @@
         "ariaLabel": "Connect on LinkedIn in a new tab"
       }
     }
+  },
+  "Footer": {
+    "linksLabel": "Contact links",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "visits": "{total, plural, =1 {# visit} other {# visits}}"
   }
 }
