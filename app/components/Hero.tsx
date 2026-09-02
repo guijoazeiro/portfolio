@@ -138,7 +138,7 @@ const Hero = () => {
     ];
   }
 
-  function scrollToSection(id: "projects" | "skills") {
+  function scrollToSection(id: "projects" | "stack") {
     document.getElementById(id)?.scrollIntoView({
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
         ? "auto"
@@ -183,7 +183,7 @@ const Hero = () => {
         ];
         break;
       case "skills":
-        scrollToSection("skills");
+        scrollToSection("stack");
         response = [
           createLine("output", tTerminal("skills")),
           createLine("output", tHero("stack")),

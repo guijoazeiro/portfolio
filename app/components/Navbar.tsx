@@ -5,11 +5,11 @@ import { Link, usePathname, useRouter } from "@/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type Locale = "pt" | "en";
-type SectionKey = "home" | "skills" | "experience" | "projects" | "contact";
+type SectionKey = "home" | "stack" | "experience" | "projects" | "contact";
 
 const sectionKeys: SectionKey[] = [
   "home",
-  "skills",
+  "stack",
   "experience",
   "projects",
   "contact",
@@ -111,7 +111,7 @@ export default function Navbar() {
       label: t("home.text"),
     },
     {
-      key: "skills",
+      key: "stack",
       href: t("skills.href"),
       label: t("skills.text"),
     },
