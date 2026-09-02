@@ -1218,16 +1218,26 @@ a.link:focus-visible {
   min-width: 0;
 }
 
+.contact-section__container {
+  position: relative;
+  left: 50%;
+  width: min(calc(100vw - 1.5rem), 760px);
+  margin-inline: auto;
+  transform: translateX(-50%);
+}
+
 .contact-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
   gap: 1.25rem;
+  width: 100%;
   min-width: 0;
 }
 
 .contact-panel {
   display: flex;
+  width: 100%;
   min-width: 0;
   flex-direction: column;
   padding: 1.5rem;
@@ -1265,6 +1275,7 @@ a.link:focus-visible {
   grid-template-columns: 2.3rem minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.75rem;
+  width: 100%;
   min-width: 0;
   min-height: 4rem;
   padding: 0.65rem 0.7rem;
@@ -1396,6 +1407,7 @@ a.link:focus-visible {
 
 .contact-form {
   display: flex;
+  width: 100%;
   min-width: 0;
   flex: 1;
   flex-direction: column;
