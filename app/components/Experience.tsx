@@ -8,10 +8,25 @@ import { FiChevronDown } from "react-icons/fi";
 const experienceKeys = ["First", "Second", "Third"] as const;
 type ExperienceKey = (typeof experienceKeys)[number];
 
-const experienceLogos: Record<ExperienceKey, string> = {
-  First: "/experience/greens-corp-logo.jpeg",
-  Second: "/experience/ttms-technologies-logo.jpeg",
-  Third: "/experience/adin-marketing-digital-logo.jpeg",
+const experienceLogos: Record<
+  ExperienceKey,
+  { src: string; width: number; height: number }
+> = {
+  First: {
+    src: "/experience/greens-corp-wordmark.webp",
+    width: 172,
+    height: 46,
+  },
+  Second: {
+    src: "/experience/ttms-technologies-wordmark.webp",
+    width: 160,
+    height: 45,
+  },
+  Third: {
+    src: "/experience/adin-marketing-digital-wordmark.webp",
+    width: 120,
+    height: 18,
+  },
 };
 
 const Experience = () => {
@@ -40,6 +55,7 @@ const Experience = () => {
           const triggerId = `experience-trigger-${experienceId}`;
           const panelId = `experience-panel-${experienceId}`;
           const bullets = t.raw(`${experience}.bullets`) as string[];
+          const logo = experienceLogos[experience];
 
           return (
             <li
@@ -58,16 +74,17 @@ const Experience = () => {
                 aria-controls={panelId}
                 onClick={() => toggleExperience(experience)}
               >
+                <span className="experience-row__logo-wrap" aria-hidden="true">
+                  <Image
+                    className="experience-row__logo"
+                    src={logo.src}
+                    alt=""
+                    width={logo.width}
+                    height={logo.height}
+                  />
+                </span>
                 <span className="experience-row__main">
                   <span className="experience-row__company">
-                    <Image
-                      className="experience-row__logo"
-                      src={experienceLogos[experience]}
-                      alt=""
-                      aria-hidden="true"
-                      width={26}
-                      height={26}
-                    />
                     <span>{t(`${experience}.company`)}</span>
                   </span>
                   <span className="experience-row__role">

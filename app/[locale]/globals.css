@@ -658,6 +658,9 @@ a.link:focus-visible {
 }
 
 .experience-list {
+  --experience-logo-width: 4.5rem;
+  --experience-row-gap: 1.25rem;
+  --experience-row-padding: 1.1rem;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -674,12 +677,12 @@ a.link:focus-visible {
 
 .experience-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: var(--experience-logo-width) minmax(0, 1fr) auto auto;
   align-items: center;
-  column-gap: 1.25rem;
+  column-gap: var(--experience-row-gap);
   width: 100%;
   min-height: 4.75rem;
-  padding: 1rem 1.1rem;
+  padding: 1rem var(--experience-row-padding);
   border: 0;
   border-left: 2px solid transparent;
   background: transparent;
@@ -700,21 +703,29 @@ a.link:focus-visible {
 }
 
 .experience-row--open {
-  border-left-color: var(--link);
-  background: rgba(109, 140, 255, 0.06);
+  border-left-color: rgba(109, 140, 255, 0.35);
+}
+
+.experience-row__logo-wrap {
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-content: flex-start;
+  width: var(--experience-logo-width);
+  height: 2.25rem;
 }
 
 .experience-row__main {
   display: flex;
+  grid-column: 2;
+  grid-row: 1;
   min-width: 0;
   flex-direction: column;
   gap: 0.25rem;
 }
 
 .experience-row__company {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
   min-width: 0;
   overflow-wrap: anywhere;
   color: var(--heading);
@@ -723,18 +734,14 @@ a.link:focus-visible {
   letter-spacing: -0.01em;
 }
 
-.experience-row__company > span {
-  min-width: 0;
-}
-
 .experience-row__logo {
-  width: 1.625rem;
-  height: 1.625rem;
+  width: 100%;
+  height: 100%;
   flex-shrink: 0;
-  border: 1px solid rgba(63, 63, 70, 0.72);
+  border: 1px solid rgba(63, 63, 70, 0.62);
   border-radius: 0.45rem;
   background: rgba(24, 24, 27, 0.72);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .experience-row--open .experience-row__company {
@@ -748,6 +755,8 @@ a.link:focus-visible {
 }
 
 .experience-row__period {
+  grid-column: 3;
+  grid-row: 1;
   color: var(--muted-strong);
   font-size: 0.75rem;
   line-height: 1.45;
@@ -755,6 +764,8 @@ a.link:focus-visible {
 }
 
 .experience-row__chevron {
+  grid-column: 4;
+  grid-row: 1;
   width: 1.1rem;
   height: 1.1rem;
   flex-shrink: 0;
@@ -791,7 +802,11 @@ a.link:focus-visible {
 .experience-panel__inner {
   min-height: 0;
   overflow: hidden;
-  padding: 0 1.1rem 0 3.05rem;
+  padding: 0 var(--experience-row-padding) 0
+    calc(
+      var(--experience-row-padding) + var(--experience-logo-width) +
+        var(--experience-row-gap)
+    );
   transition: padding-bottom 250ms ease;
 }
 
@@ -810,8 +825,8 @@ a.link:focus-visible {
   position: relative;
   padding-left: 1rem;
   color: var(--muted-strong);
-  font-size: 0.8125rem;
-  line-height: 1.65;
+  font-size: 0.875rem;
+  line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
@@ -831,32 +846,53 @@ a.link:focus-visible {
 }
 
 @media (max-width: 767px) {
+  .experience-list {
+    --experience-logo-width: 3.625rem;
+    --experience-row-gap: 0.8rem;
+    --experience-row-padding: 0.9rem;
+  }
+
   .experience-row {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: var(--experience-logo-width) minmax(0, 1fr) auto;
     align-items: start;
-    column-gap: 0.8rem;
+    column-gap: var(--experience-row-gap);
     min-height: 5rem;
-    padding: 0.95rem 0.9rem;
+    padding: 0.95rem var(--experience-row-padding);
+  }
+
+  .experience-row__logo-wrap {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 1.875rem;
+  }
+
+  .experience-row__main {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .experience-row__period {
-    grid-column: 1;
+    grid-column: 2;
+    grid-row: 2;
     margin-top: 0.35rem;
   }
 
   .experience-row__chevron {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1 / span 2;
     align-self: center;
   }
 
   .experience-panel__inner {
-    padding-right: 0.9rem;
-    padding-left: 1.95rem;
+    padding-right: var(--experience-row-padding);
+    padding-left: calc(
+      var(--experience-row-padding) + var(--experience-logo-width) +
+        var(--experience-row-gap)
+    );
   }
 
   .experience-panel__list li {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     line-height: 1.6;
   }
 }
