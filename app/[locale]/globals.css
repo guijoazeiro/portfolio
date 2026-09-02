@@ -638,65 +638,209 @@ a.link:focus-visible {
   }
 }
 
-/* ---------- Experience bullets ---------- */
-.bullets {
-  list-style: none;
-  padding: 0;
+/* ---------- Experience accordion ---------- */
+.experience-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-heading__bar {
+  width: 2px;
+  height: 1.35rem;
+  border-radius: 9999px;
+  background: var(--link);
+}
+
+.experience-heading .section-title {
+  margin-bottom: 0;
+}
+
+.experience-list {
+  width: 100%;
   margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: rgba(24, 24, 27, 0.2);
 }
 
-.bullets li {
-  position: relative;
-  padding-left: 1.1rem;
+.experience-list__item + .experience-list__item {
+  border-top: 1px solid var(--border);
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: 1.25rem;
+  width: 100%;
+  min-height: 4.75rem;
+  padding: 1rem 1.1rem;
+  border: 0;
+  border-left: 2px solid transparent;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background-color 250ms ease, border-color 250ms ease;
+}
+
+.experience-row:hover {
+  background: rgba(109, 140, 255, 0.05);
+}
+
+.experience-row:focus-visible {
+  outline: 2px solid var(--link-hover);
+  outline-offset: -3px;
+}
+
+.experience-row--open {
+  border-left-color: var(--link);
+  background: rgba(109, 140, 255, 0.06);
+}
+
+.experience-row__main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.experience-row__company {
+  overflow-wrap: anywhere;
+  color: var(--heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.experience-row--open .experience-row__company {
+  color: var(--link-hover);
+}
+
+.experience-row__role {
+  color: var(--link);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.experience-row__period {
   color: var(--muted-strong);
-  font-size: 0.875rem;
-  line-height: 1.55;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.experience-row__chevron {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  color: var(--link);
+  transition: transform 250ms ease, color 180ms ease;
+}
+
+.experience-row:hover .experience-row__chevron,
+.experience-row:focus-visible .experience-row__chevron {
+  color: var(--link-hover);
+}
+
+.experience-row--open .experience-row__chevron {
+  transform: rotate(180deg);
+}
+
+.experience-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-0.35rem);
+  visibility: hidden;
+  transition: grid-template-rows 250ms ease, opacity 250ms ease,
+    transform 250ms ease, visibility 250ms ease;
+}
+
+.experience-panel--open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.experience-panel__inner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 1.1rem 0 3.05rem;
+  transition: padding-bottom 250ms ease;
+}
+
+.experience-panel--open .experience-panel__inner {
+  padding-bottom: 1.15rem;
+}
+
+.experience-panel__list {
   max-width: 68ch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.bullets li + li {
-  margin-top: 0.35rem;
+.experience-panel__list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--muted-strong);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
-.bullets li::before {
-  content: "";
+.experience-panel__list li + li {
+  margin-top: 0.4rem;
+}
+
+.experience-panel__list li::before {
   position: absolute;
+  top: 0.68em;
   left: 0;
-  top: 0.65em;
   width: 4px;
   height: 4px;
   border-radius: 9999px;
-  background: var(--muted);
-}
-
-/* ---------- Experience company (Linear-style hover bar) ---------- */
-.experience-item {
-  position: relative;
-}
-
-.company {
-  position: relative;
-  display: inline-block;
-  transition: transform 150ms ease;
-}
-
-.company::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 0.2em;
-  bottom: 0.2em;
-  width: 2px;
   background: var(--link);
-  opacity: 0;
-  transform: scaleY(0.5);
-  transform-origin: center;
-  transition: opacity 150ms ease, transform 150ms ease;
+  content: "";
 }
 
-.experience-item:hover .company::before {
-  opacity: 1;
-  transform: scaleY(1);
+@media (max-width: 767px) {
+  .experience-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    column-gap: 0.8rem;
+    min-height: 5rem;
+    padding: 0.95rem 0.9rem;
+  }
+
+  .experience-row__period {
+    grid-column: 1;
+    margin-top: 0.35rem;
+  }
+
+  .experience-row__chevron {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .experience-panel__inner {
+    padding-right: 0.9rem;
+    padding-left: 1.95rem;
+  }
+
+  .experience-panel__list li {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
 }
 
 /* ---------- Contact form ---------- */
@@ -797,6 +941,13 @@ a.link:focus-visible {
     animation: none;
   }
 
+  .experience-row,
+  .experience-row__chevron,
+  .experience-panel,
+  .experience-panel__inner {
+    transition: none;
+  }
+
   .stack-marquee__track {
     width: 100%;
     transform: none;
@@ -823,8 +974,6 @@ a.link:focus-visible {
     transition: none;
   }
   a.link,
-  .company,
-  .company::before,
   .btn-primary,
   .input {
     transition: none;
