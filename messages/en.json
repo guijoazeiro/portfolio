@@ -239,11 +239,45 @@
     }
   },
   "Contact": {
-    "h1": "Contact",
-    "h2": "Contact me",
-    "h3": "Currently, I am seeking new opportunities and my inbox is open.",
+    "h1": "Let’s Work Together",
+    "h2": "Get in touch",
+    "h3": "Choose your preferred way to connect and let’s talk about your project.",
+    "formTitle": "Send a message",
+    "formDescription": "Prefer to write? Fill out the form and I’ll get back to you as soon as possible.",
     "emailName": "Name",
     "emailAddress": "Email",
-    "emailMessage": "Message"
+    "emailMessage": "Message",
+    "namePlaceholder": "How can I call you?",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Tell me a little about the project...",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "footer": "Usually replies within 24 hours • Open to opportunities",
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address."
+    },
+    "status": {
+      "success": "Message sent successfully!",
+      "error": "Something went wrong while sending the message."
+    },
+    "options": {
+      "cal": {
+        "title": "Book a quick chat",
+        "description": "Let’s talk about code, projects, or opportunities",
+        "unavailable": "Coming soon",
+        "ariaLabel": "Book a quick chat"
+      },
+      "email": {
+        "title": "Write an email",
+        "description": "For proposals, questions, or collaborations",
+        "ariaLabel": "Write an email"
+      },
+      "linkedin": {
+        "title": "Connect on LinkedIn",
+        "description": "Follow my professional journey",
+        "ariaLabel": "Connect on LinkedIn in a new tab"
+      }
+    }
   }
 }

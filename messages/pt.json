@@ -239,11 +239,45 @@
     }
   },
   "Contact": {
-    "h1": "Contato",
-    "h2": "Entre em contato comigo",
-    "h3": "Atualmente estou em busca de novas oportunidades e minha caixa de entrada está aberta.",
+    "h1": "Vamos trabalhar juntos",
+    "h2": "Entre em contato",
+    "h3": "Escolha a melhor forma de contato e vamos conversar sobre seu projeto.",
+    "formTitle": "Envie uma mensagem",
+    "formDescription": "Prefere escrever? Preencha o formulário e responderei assim que possível.",
     "emailName": "Nome",
-    "emailAddress": "Email",
-    "emailMessage": "Mensagem"
+    "emailAddress": "E-mail",
+    "emailMessage": "Mensagem",
+    "namePlaceholder": "Como posso te chamar?",
+    "emailPlaceholder": "voce@exemplo.com",
+    "messagePlaceholder": "Conte um pouco sobre o projeto...",
+    "submit": "Enviar mensagem",
+    "sending": "Enviando...",
+    "footer": "Respondo normalmente em até 24 horas • Disponível para oportunidades",
+    "validation": {
+      "required": "Este campo é obrigatório.",
+      "email": "Digite um e-mail válido."
+    },
+    "status": {
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Ocorreu um erro ao enviar a mensagem."
+    },
+    "options": {
+      "cal": {
+        "title": "Agendar uma conversa",
+        "description": "Vamos falar sobre código, projetos ou oportunidades",
+        "unavailable": "Em breve",
+        "ariaLabel": "Agendar uma conversa"
+      },
+      "email": {
+        "title": "Enviar um e-mail",
+        "description": "Para propostas, dúvidas ou colaborações",
+        "ariaLabel": "Enviar um e-mail"
+      },
+      "linkedin": {
+        "title": "Conectar no LinkedIn",
+        "description": "Acompanhe minha trajetória profissional",
+        "ariaLabel": "Conectar no LinkedIn em uma nova aba"
+      }
+    }
   }
 }
