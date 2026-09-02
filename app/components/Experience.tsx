@@ -13,9 +13,9 @@ const experienceLogos: Record<
   { src: string; width: number; height: number }
 > = {
   First: {
-    src: "/experience/greens-corp-wordmark.webp",
-    width: 172,
-    height: 46,
+    src: "/experience/greens-corp-wordmark-transparent.webp",
+    width: 938,
+    height: 244,
   },
   Second: {
     src: "/experience/ttms-technologies-wordmark.webp",
@@ -79,6 +79,7 @@ const Experience = () => {
                     className="experience-row__logo"
                     src={logo.src}
                     alt=""
+                    aria-hidden="true"
                     width={logo.width}
                     height={logo.height}
                   />

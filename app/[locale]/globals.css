@@ -711,9 +711,10 @@ a.link:focus-visible {
   grid-column: 1;
   grid-row: 1;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: var(--experience-logo-width);
-  height: 2.25rem;
+  height: 2rem;
+  flex-shrink: 0;
 }
 
 .experience-row__main {
@@ -738,9 +739,6 @@ a.link:focus-visible {
   width: 100%;
   height: 100%;
   flex-shrink: 0;
-  border: 1px solid rgba(63, 63, 70, 0.62);
-  border-radius: 0.45rem;
-  background: rgba(24, 24, 27, 0.72);
   object-fit: contain;
 }
 
