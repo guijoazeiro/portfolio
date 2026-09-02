@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, type CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 import { FiArrowUpRight } from "react-icons/fi";
 import {
@@ -9,6 +9,13 @@ import {
 
 const WEEKDAYS = [0, 1, 2, 3, 4, 5, 6] as const;
 const SKELETON_WEEKS = 53;
+const GITHUB_FALLBACK_COLORS = {
+  NONE: "#1b1f23",
+  FIRST_QUARTILE: "#0e4429",
+  SECOND_QUARTILE: "#006d32",
+  THIRD_QUARTILE: "#26a641",
+  FOURTH_QUARTILE: "#39d353",
+} as const;
 
 function formatContributionDate(date: string, locale: string) {
   return new Intl.DateTimeFormat(locale === "pt" ? "pt-BR" : "en-US", {
@@ -32,6 +39,19 @@ function getContributionLevel(level: string, count: number) {
     default:
       return count > 0 ? 1 : 0;
   }
+}
+
+function getContributionColor(day: ContributionDay) {
+  if (day.contributionCount === 0) {
+    return GITHUB_FALLBACK_COLORS.NONE;
+  }
+
+  return (
+    GITHUB_FALLBACK_COLORS[
+      day.contributionLevel as keyof typeof GITHUB_FALLBACK_COLORS
+    ] ||
+    GITHUB_FALLBACK_COLORS.FIRST_QUARTILE
+  );
 }
 
 function getDayForWeekday(week: ContributionWeek, weekday: number) {
@@ -84,7 +104,7 @@ function ContributionMeta({
               className="github-contributions__separator"
               aria-hidden="true"
             >
-              /
+              •
             </span>
             <span className="github-contributions__total">
               {t("total", { total })}
@@ -126,13 +146,12 @@ function ContributionCell({
   return (
     <span
       className={`github-contributions__cell github-contributions__cell--level-${level}`}
+      style={{ backgroundColor: getContributionColor(day) }}
       role="gridcell"
       aria-label={label}
       aria-rowindex={rowIndex + 1}
       aria-colindex={columnIndex + 1}
       tabIndex={day.contributionCount > 0 ? 0 : -1}
-      data-tooltip={label}
-      title={label}
     />
   );
 }
@@ -148,7 +167,7 @@ function ContributionGrid({
 
   return (
     <div
-      className="github-contributions__scroll"
+      className="github-contributions__calendar"
       role="region"
       aria-label={t("calendarLabel")}
     >
@@ -158,17 +177,24 @@ function ContributionGrid({
         aria-label={t("calendarLabel")}
         aria-rowcount={WEEKDAYS.length}
         aria-colcount={weeks.length}
-        style={{ gridTemplateColumns: `repeat(${weeks.length}, var(--github-cell-size))` }}
+        style={
+          {
+            "--week-count": weeks.length,
+          } as CSSProperties
+        }
       >
-        {WEEKDAYS.map((weekday) => (
+        {weeks.map((week, weekIndex) => (
           <div
-            className="github-contributions__row"
+            className="github-contributions__week"
             role="row"
-            key={weekday}
+            key={weekIndex}
           >
-            {weeks.map((week, weekIndex) => (
+            {WEEKDAYS.map((weekday) => (
               <ContributionCell
-                key={getDayForWeekday(week, weekday)?.date ?? `${weekIndex}-${weekday}`}
+                key={
+                  getDayForWeekday(week, weekday)?.date ??
+                  `${weekIndex}-${weekday}`
+                }
                 day={getDayForWeekday(week, weekday)}
                 locale={locale}
                 rowIndex={weekday}
@@ -178,9 +204,6 @@ function ContributionGrid({
           </div>
         ))}
       </div>
-      <span className="github-contributions__scroll-hint" aria-hidden="true">
-        {t("scrollHint")}
-      </span>
     </div>
   );
 }
@@ -229,21 +252,21 @@ function ContributionsSkeleton() {
         <span className="github-contributions__skeleton-block github-contributions__skeleton-block--activity" />
         <span className="github-contributions__skeleton-block github-contributions__skeleton-block--meta" />
       </div>
-      <div className="github-contributions__scroll" aria-hidden="true">
+      <div className="github-contributions__calendar" aria-hidden="true">
         <div
           className="github-contributions__grid"
-          style={{
-            gridTemplateColumns: `repeat(${SKELETON_WEEKS}, var(--github-cell-size))`,
-          }}
+          style={{ "--week-count": SKELETON_WEEKS } as CSSProperties}
         >
-          {Array.from({ length: WEEKDAYS.length * SKELETON_WEEKS }).map(
-            (_, index) => (
-              <span
-                className="github-contributions__cell github-contributions__cell--skeleton"
-                key={index}
-              />
-            ),
-          )}
+          {Array.from({ length: SKELETON_WEEKS }).map((_, weekIndex) => (
+            <div className="github-contributions__week" key={weekIndex}>
+              {WEEKDAYS.map((weekday) => (
+                <span
+                  className="github-contributions__cell github-contributions__cell--skeleton"
+                  key={weekday}
+                />
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>

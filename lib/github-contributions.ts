@@ -14,6 +14,7 @@ const CONTRIBUTIONS_QUERY = `
               contributionCount
               contributionLevel
               weekday
+              color
             }
           }
         }
@@ -27,6 +28,7 @@ export type ContributionDay = {
   contributionCount: number;
   contributionLevel: string;
   weekday: number;
+  color?: string | null;
 };
 
 export type ContributionWeek = {

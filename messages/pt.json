@@ -206,7 +206,6 @@
     "calendarLabel": "Calendário de contribuições do GitHub",
     "cellLabel": "{count} contribuições em {date}",
     "accessibilitySummary": "Calendário com {total} contribuições no período exibido.",
-    "scrollHint": "Deslize para ver o histórico →",
     "loading": "Carregando contribuições",
     "error": "Não foi possível carregar as contribuições agora."
   },
