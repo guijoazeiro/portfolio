@@ -211,8 +211,7 @@
   },
   "Articles": {
     "h1": "Artigos",
-    "sub": "Alguns escritos que podem ser úteis.",
-    "ArticleLinkAriaLabel": "Link para o artigo",
+    "ArticleLinkAriaLabel": "Abrir o artigo {article} no LinkedIn em uma nova aba",
     "First": {
       "id": "1",
       "title": "Escalando Aplicações Node.js com Clusters",
