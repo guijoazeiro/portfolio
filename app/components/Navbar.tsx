@@ -167,6 +167,17 @@ export default function Navbar() {
   useEffect(() => {
     if (!isMenuOpen) return;
 
+    const previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
@@ -257,6 +268,7 @@ export default function Navbar() {
         "site-navbar",
         isScrolled && "site-navbar--scrolled",
         isNavbarHidden && "site-navbar--hidden",
+        isMenuOpen && "site-navbar--menu-open",
       ]
         .filter(Boolean)
         .join(" ")}
