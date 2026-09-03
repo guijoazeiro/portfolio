@@ -284,7 +284,6 @@
     "linksLabel": "Links de contato",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "email": "E-mail",
-    "visits": "{total, plural, =1 {# visita} other {# visitas}}"
+    "email": "E-mail"
   }
 }
