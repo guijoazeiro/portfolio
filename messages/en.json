@@ -5,14 +5,9 @@
       "href": "/",
       "text": "Home"
     },
-    "about": {
-      "id": 2,
-      "href": "#about",
-      "text": "About"
-    },
     "skills": {
       "id": 3,
-      "href": "#skills",
+      "href": "#stack",
       "text": "Stack"
     },
     "experience": {
@@ -34,20 +29,48 @@
       "id": 7,
       "href": "#contact",
       "text": "Contact"
+    },
+    "ariaLabel": "Main navigation",
+    "languageLabel": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": {
+      "pt": "Portuguese",
+      "en": "English"
     }
   },
   "Hero": {
+    "name": "Guilherme Joazeiro",
+    "description": "Backend Engineer with 3+ years building APIs, microservices, and scalable systems. I work from architecture to deployment, focusing on performance, security, and quality.",
     "h1": "Hello, I'm",
     "words": " Backend Developer",
     "role": "Backend Engineer",
     "stack": "Node.js • TypeScript • Go • Python",
     "cv": "Download CV",
+    "cvLabel": "Download resume",
+    "github": "GitHub",
+    "githubLabel": "Open GitHub profile",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "Open LinkedIn profile",
     "contact": "Contact",
-    "cvlink": "curriculumGuilhermeJoazeiro.pdf"
+    "cvlink": "CurriculumGuilhermeJoazeiro.pdf"
   },
-  "About": {
-    "h1": "About",
-    "p1": "Backend Engineer with 3+ years building REST APIs, microservices and scalable systems with Node.js, TypeScript, Python, Java and Go. I work end-to-end — from architecture and data modeling to AWS deploys, CI/CD and automations — with a focus on performance, security and code quality."
+  "Terminal": {
+    "title": "~/guilherme — interactive",
+    "introductionLabel": "Introduction",
+    "logLabel": "Terminal output",
+    "inputLabel": "Terminal command",
+    "prompt": "$",
+    "initialAboutCommand": "about",
+    "aboutResponse": "guilherme — backend engineer",
+    "statusCommand": "./status.sh",
+    "statusMessage": "● open to work",
+    "hint": "Type `help` to take a look.",
+    "helpEnglish": "Available commands:\nhelp\nabout\n./status.sh\nprojects\nskills\nclear",
+    "helpPortuguese": "Comandos disponíveis:\najuda\nsobre\n./status.sh\nprojetos\nhabilidades\nlimpar",
+    "projects": "Available projects:",
+    "skills": "Main stack:",
+    "invalidCommand": "Invalid command. Type help to see the commands."
   },
   "Skills": {
     "h1": "Stack"
@@ -102,7 +125,7 @@
   "Projects": {
     "h1": "Projects",
     "sub": "A few things I've been building.",
-    "ProjectLinkAriaLabel": "Link to project GitHub repository",
+    "ProjectLinkAriaLabel": "Open {project} in a new tab",
     "First": {
       "id": "1",
       "title": "Microservices Communication",
@@ -160,10 +183,22 @@
       "githubLink": "https://github.com/guijoazeiro/conversion-microservice"
     }
   },
+  "GithubContributions": {
+    "h1": "GitHub Contributions",
+    "activity": "ACTIVITY",
+    "profile": "PROFILE",
+    "profileFallback": "VIEW GITHUB PROFILE",
+    "profileAriaLabel": "Open GitHub profile in a new tab",
+    "total": "{total} CONTRIBUTIONS",
+    "calendarLabel": "GitHub contribution calendar",
+    "cellLabel": "{count} contributions on {date}",
+    "accessibilitySummary": "Calendar with {total} contributions in the displayed period.",
+    "loading": "Loading contributions",
+    "error": "Contributions could not be loaded right now."
+  },
   "Articles": {
     "h1": "Articles",
-    "sub": "A few writings that may be useful.",
-    "ArticleLinkAriaLabel": "Link to article",
+    "ArticleLinkAriaLabel": "Open the article {article} on LinkedIn in a new tab",
     "First": {
       "id": "1",
       "title": "Scaling Node.js Applications with Clusters",
@@ -190,11 +225,51 @@
     }
   },
   "Contact": {
-    "h1": "Contact",
-    "h2": "Contact me",
-    "h3": "Currently, I am seeking new opportunities and my inbox is open.",
+    "h1": "Let’s Work Together",
+    "h2": "Get in touch",
+    "h3": "Choose your preferred way to connect and let’s talk about your project.",
+    "formTitle": "Send a message",
+    "formDescription": "Prefer to write? Fill out the form and I’ll get back to you as soon as possible.",
     "emailName": "Name",
     "emailAddress": "Email",
-    "emailMessage": "Message"
+    "emailMessage": "Message",
+    "namePlaceholder": "How can I call you?",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Tell me a little about the project...",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "footer": "Usually replies within 24 hours • Open to opportunities",
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address."
+    },
+    "status": {
+      "success": "Message sent successfully!",
+      "error": "Something went wrong while sending the message."
+    },
+    "options": {
+      "cal": {
+        "title": "Book a quick chat",
+        "description": "Let’s talk about code, projects, or opportunities",
+        "unavailable": "Coming soon",
+        "ariaLabel": "Book a quick chat"
+      },
+      "email": {
+        "title": "Write an email",
+        "description": "For proposals, questions, or collaborations",
+        "ariaLabel": "Write an email"
+      },
+      "linkedin": {
+        "title": "Connect on LinkedIn",
+        "description": "Follow my professional journey",
+        "ariaLabel": "Connect on LinkedIn in a new tab"
+      }
+    }
+  },
+  "Footer": {
+    "linksLabel": "Contact links",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   }
 }

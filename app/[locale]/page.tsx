@@ -1,11 +1,11 @@
 import { unstable_setRequestLocale } from "next-intl/server";
-import About from "../components/About";
 import Experience from "../components/Experience";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Articles from "../components/Articles";
+import GithubContributions from "../components/GithubContributions";
 
 export default function Home({
   params: { locale },
@@ -17,10 +17,10 @@ export default function Home({
   return (
     <main>
       <Hero />
-      <About />
       <Skills />
       <Experience />
       <Projects />
+      <GithubContributions locale={locale} />
       <Articles />
       <Contact />
     </main>

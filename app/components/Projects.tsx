@@ -7,35 +7,50 @@ const Projects = () => {
 
   return (
     <section className="mb-16 md:mb-24 reveal" id="projects">
-      <h2 className="section-title">{t("h1")}</h2>
-      <p className="section-sub">{t("sub")}</p>
-      <div className="space-y-10">
+      <div className="experience-heading">
+        <span className="experience-heading__bar" aria-hidden="true" />
+        <h2 className="section-title">{t("h1")}</h2>
+      </div>
+
+      <ul className="projects-list">
         {keys.map((project) => {
-          const technologies = t.raw(`${project}.technologies`) as string[];
+          const href = t(`${project}.githubLink`);
+          const origin = new URL(href).hostname
+            .replace(/^www\./, "")
+            .toUpperCase();
+
           return (
-            <article key={t(`${project}.id`)}>
-              <h3 className="text-base font-semibold tracking-tight text-[var(--heading)]">
-                {t(`${project}.title`).trim()}
-              </h3>
-              <p className="text-sm text-[var(--muted-strong)] mt-2 leading-relaxed prose">
-                {t(`${project}.description`)}
-              </p>
-              <p className="tech-list mt-3">{technologies.join(" • ")}</p>
-              <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-                <a
-                  className="link"
-                  href={t(`${project}.githubLink`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={t("ProjectLinkAriaLabel")}
-                >
-                  GitHub <FiArrowUpRight aria-hidden />
-                </a>
-              </div>
-            </article>
+            <li key={t(`${project}.id`)}>
+              <a
+                className="projects-list__link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("ProjectLinkAriaLabel", {
+                  project: t(`${project}.title`).trim(),
+                })}
+              >
+                <span className="projects-list__content">
+                  <span className="projects-list__title-row">
+                    <span className="projects-list__name">
+                      {t(`${project}.title`).trim()}
+                    </span>
+                    <span className="projects-list__origin">{origin}</span>
+                  </span>
+                  <span className="projects-list__description">
+                    {t(`${project}.description`)}
+                  </span>
+                </span>
+                <FiArrowUpRight
+                  className="projects-list__arrow"
+                  aria-hidden="true"
+                  focusable="false"
+                />
+              </a>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 };
