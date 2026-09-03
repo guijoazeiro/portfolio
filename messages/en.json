@@ -30,10 +30,6 @@
       "href": "#contact",
       "text": "Contact"
     },
-    "github": {
-      "href": "#github-contributions",
-      "text": "GitHub"
-    },
     "ariaLabel": "Main navigation",
     "languageLabel": "Language",
     "openMenu": "Open menu",

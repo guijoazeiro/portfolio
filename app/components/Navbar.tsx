@@ -10,7 +10,7 @@ type SectionKey =
   | "stack"
   | "experience"
   | "projects"
-  | "github"
+  | "articles"
   | "contact";
 
 const sectionKeys: SectionKey[] = [
@@ -18,7 +18,7 @@ const sectionKeys: SectionKey[] = [
   "stack",
   "experience",
   "projects",
-  "github",
+  "articles",
   "contact",
 ];
 
@@ -27,7 +27,7 @@ const sectionIds: Record<SectionKey, string> = {
   stack: "stack",
   experience: "experience",
   projects: "projects",
-  github: "github-contributions",
+  articles: "articles",
   contact: "contact",
 };
 
@@ -142,9 +142,9 @@ export default function Navbar() {
       label: t("projects.text"),
     },
     {
-      key: "github",
-      href: t("github.href"),
-      label: t("github.text"),
+      key: "articles",
+      href: t("articles.href"),
+      label: t("articles.text"),
     },
     {
       key: "contact",
