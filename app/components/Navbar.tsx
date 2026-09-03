@@ -37,17 +37,58 @@ export default function Navbar() {
   const router = useRouter();
   const t = useTranslations("Navbar");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const previousScrollYRef = useRef(0);
+  const scrollFrameRef = useRef<number | null>(null);
+  const isMenuOpenRef = useRef(false);
+  const revealLockUntilRef = useRef(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<SectionKey>("home");
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 16);
+    const directionThreshold = 14;
+    const alwaysVisibleUntil = 96;
+    const initialScrollY = window.scrollY;
 
-    handleScroll();
+    previousScrollYRef.current = initialScrollY;
+    setIsScrolled(initialScrollY > 16);
+
+    const handleScroll = () => {
+      if (scrollFrameRef.current !== null) return;
+
+      scrollFrameRef.current = window.requestAnimationFrame(() => {
+        scrollFrameRef.current = null;
+
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - previousScrollYRef.current;
+        previousScrollYRef.current = currentScrollY;
+        setIsScrolled(currentScrollY > 16);
+
+        if (
+          isMenuOpenRef.current ||
+          currentScrollY <= alwaysVisibleUntil ||
+          Date.now() < revealLockUntilRef.current
+        ) {
+          setIsNavbarHidden(false);
+          return;
+        }
+
+        if (Math.abs(scrollDelta) < directionThreshold) return;
+
+        setIsNavbarHidden(scrollDelta > 0);
+      });
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollFrameRef.current !== null) {
+        window.cancelAnimationFrame(scrollFrameRef.current);
+        scrollFrameRef.current = null;
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -92,6 +133,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    isMenuOpenRef.current = isMenuOpen;
+    if (isMenuOpen) setIsNavbarHidden(false);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     if (!isMenuOpen) return;
 
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -106,11 +152,34 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   function closeMenu() {
+    isMenuOpenRef.current = false;
     setIsMenuOpen(false);
+  }
+
+  function revealNavbarForInteraction() {
+    revealLockUntilRef.current = Date.now() + 800;
+    setIsNavbarHidden(false);
+  }
+
+  function handleMenuToggle() {
+    const nextIsMenuOpen = !isMenuOpen;
+    isMenuOpenRef.current = nextIsMenuOpen;
+    setIsNavbarHidden(false);
+    setIsMenuOpen(nextIsMenuOpen);
+  }
+
+  function handleNavbarFocus() {
+    revealNavbarForInteraction();
+  }
+
+  function handleNavItemClick() {
+    closeMenu();
+    revealNavbarForInteraction();
   }
 
   function changeLocale(nextLocale: Locale) {
     closeMenu();
+    revealNavbarForInteraction();
     if (nextLocale === locale) return;
     router.push(pathname, { locale: nextLocale });
   }
@@ -155,8 +224,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`site-navbar ${isScrolled ? "site-navbar--scrolled" : ""}`}
+      className={[
+        "site-navbar",
+        isScrolled && "site-navbar--scrolled",
+        isNavbarHidden && "site-navbar--hidden",
+      ]
+        .filter(Boolean)
+        .join(" ")}
       aria-label={t("ariaLabel")}
+      onFocusCapture={handleNavbarFocus}
     >
       <div className="site-navbar__inner">
         <button
@@ -166,7 +242,7 @@ export default function Navbar() {
           aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
           aria-expanded={isMenuOpen}
           aria-controls="site-navbar-links"
-          onClick={() => setIsMenuOpen((open) => !open)}
+          onClick={handleMenuToggle}
         >
           <span className="site-navbar__menu-icon" aria-hidden="true">
             <span />
@@ -191,7 +267,7 @@ export default function Navbar() {
                     ? ("page" as const)
                     : ("location" as const)
                   : undefined,
-                onClick: closeMenu,
+                onClick: handleNavItemClick,
               };
 
               if (external) {
