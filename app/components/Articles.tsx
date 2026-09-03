@@ -3,34 +3,56 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const Articles = () => {
   const t = useTranslations("Articles");
-  const keys = ["First", "Second", "Third"] as const;
+  const keys = ["Third", "Second", "First"] as const;
 
   return (
     <section className="mb-16 md:mb-24 reveal" id="articles">
-      <h2 className="section-title">{t("h1")}</h2>
-      <p className="section-sub">{t("sub")}</p>
-      <div className="space-y-10">
-        {keys.map((article) => (
-          <article key={t(`${article}.id`)}>
-            <a
-              className="link text-base font-semibold tracking-tight"
-              href={t(`${article}.linkedinLink`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t("ArticleLinkAriaLabel")}
-            >
-              <FiArrowUpRight aria-hidden className="mr-1.5" />
-              {t(`${article}.title`)}
-            </a>
-            <p className="text-xs text-[var(--muted)] mt-2 tracking-wider">
-              {t(`${article}.date`)} • {t(`${article}.readingTime`)}
-            </p>
-            <p className="text-sm text-[var(--muted-strong)] mt-3 leading-relaxed prose">
-              {t(`${article}.description`)}
-            </p>
-          </article>
-        ))}
+      <div className="experience-heading">
+        <span className="experience-heading__bar" aria-hidden="true" />
+        <h2 className="section-title">{t("h1")}</h2>
       </div>
+
+      <ul className="articles-list">
+        {keys.map((article) => {
+          const title = t(`${article}.title`).trim();
+
+          return (
+            <li className="articles-list__item" key={t(`${article}.id`)}>
+              <article>
+                <a
+                  className="articles-list__link"
+                  href={t(`${article}.linkedinLink`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("ArticleLinkAriaLabel", { article: title })}
+                >
+                  <span className="articles-list__content">
+                    <span className="articles-list__title-row">
+                      <span className="articles-list__title">{title}</span>
+                      <span className="articles-list__origin">
+                        LINKEDIN.COM
+                      </span>
+                    </span>
+                    <span className="articles-list__meta">
+                      {t(`${article}.date`)}
+                      <span aria-hidden="true"> • </span>
+                      {t(`${article}.readingTime`)}
+                    </span>
+                    <span className="articles-list__description">
+                      {t(`${article}.description`)}
+                    </span>
+                  </span>
+                  <FiArrowUpRight
+                    className="articles-list__arrow"
+                    aria-hidden="true"
+                    focusable="false"
+                  />
+                </a>
+              </article>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 };

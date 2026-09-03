@@ -3,16 +3,11 @@
     "home": {
       "id": 1,
       "href": "/",
-      "text": "Home"
-    },
-    "about": {
-      "id": 2,
-      "href": "#about",
-      "text": "Sobre"
+      "text": "Início"
     },
     "skills": {
       "id": 3,
-      "href": "#skills",
+      "href": "#stack",
       "text": "Stack"
     },
     "experience": {
@@ -34,20 +29,48 @@
       "id": 7,
       "href": "#contact",
       "text": "Contato"
+    },
+    "ariaLabel": "Navegação principal",
+    "languageLabel": "Idioma",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "language": {
+      "pt": "Português",
+      "en": "Inglês"
     }
   },
   "Hero": {
+    "name": "Guilherme Joazeiro",
+    "description": "Backend Engineer há mais de 3 anos, criando APIs, microsserviços e sistemas escaláveis. Atuo da arquitetura ao deploy, com foco em performance, segurança e qualidade.",
     "h1": "Olá, sou",
     "words": " Desenvolvedor Backend",
     "role": "Backend Engineer",
     "stack": "Node.js • TypeScript • Go • Python",
     "cv": "Baixar CV",
+    "cvLabel": "Baixar currículo",
+    "github": "GitHub",
+    "githubLabel": "Abrir perfil do GitHub",
+    "linkedin": "LinkedIn",
+    "linkedinLabel": "Abrir perfil do LinkedIn",
     "contact": "Contato",
-    "cvlink": "curriculoGuilhermeJoazeiro.pdf"
+    "cvlink": "CurriculoGuilhermeJoazeiro.pdf"
   },
-  "About": {
-    "h1": "Sobre",
-    "p1": "Backend Engineer com mais de 3 anos construindo APIs REST, microsserviços e sistemas escaláveis em Node.js, TypeScript, Python, Java e Go. Atuo da arquitetura e modelagem ao deploy em AWS, CI/CD e automações — com foco em performance, segurança e código de qualidade."
+  "Terminal": {
+    "title": "~/guilherme — interactive",
+    "introductionLabel": "Apresentação",
+    "logLabel": "Saída do terminal",
+    "inputLabel": "Comando do terminal",
+    "prompt": "$",
+    "initialAboutCommand": "sobre",
+    "aboutResponse": "guilherme — backend engineer",
+    "statusCommand": "./status.sh",
+    "statusMessage": "● open to work",
+    "hint": "Digite `ajuda` para dar uma olhada.",
+    "helpEnglish": "Available commands:\nhelp\nabout\n./status.sh\nprojects\nskills\nclear",
+    "helpPortuguese": "Comandos disponíveis:\najuda\nsobre\n./status.sh\nprojetos\nhabilidades\nlimpar",
+    "projects": "Projetos disponíveis:",
+    "skills": "Stack principal:",
+    "invalidCommand": "Comando inválido. Digite ajuda para ver os comandos."
   },
   "Skills": {
     "h1": "Stack"
@@ -102,7 +125,7 @@
   "Projects": {
     "h1": "Projetos",
     "sub": "Algumas coisas que venho construindo.",
-    "ProjectLinkAriaLabel": "Link para o repositório do GitHub do projeto",
+    "ProjectLinkAriaLabel": "Abrir {project} em uma nova aba",
     "First": {
       "id": "1",
       "title": "Comunicação entre Microsserviços",
@@ -135,7 +158,7 @@
     "Third": {
       "id": "3",
       "title": "MiniPaaS",
-      "description": "A minimal Platform as a Service for deploying applications.",
+      "description": "Uma Platform as a Service minimalista para deploy de aplicações.",
       "technologies": [
         "Golang",
         "Next.js",
@@ -160,10 +183,22 @@
       "githubLink": "https://github.com/guijoazeiro/conversion-microservice"
     }
   },
+  "GithubContributions": {
+    "h1": "Contribuições no GitHub",
+    "activity": "ATIVIDADE",
+    "profile": "PERFIL",
+    "profileFallback": "VER PERFIL NO GITHUB",
+    "profileAriaLabel": "Abrir perfil do GitHub em uma nova aba",
+    "total": "{total} CONTRIBUIÇÕES",
+    "calendarLabel": "Calendário de contribuições do GitHub",
+    "cellLabel": "{count} contribuições em {date}",
+    "accessibilitySummary": "Calendário com {total} contribuições no período exibido.",
+    "loading": "Carregando contribuições",
+    "error": "Não foi possível carregar as contribuições agora."
+  },
   "Articles": {
     "h1": "Artigos",
-    "sub": "Alguns escritos que podem ser úteis.",
-    "ArticleLinkAriaLabel": "Link para o artigo",
+    "ArticleLinkAriaLabel": "Abrir o artigo {article} no LinkedIn em uma nova aba",
     "First": {
       "id": "1",
       "title": "Escalando Aplicações Node.js com Clusters",
@@ -190,11 +225,51 @@
     }
   },
   "Contact": {
-    "h1": "Contato",
-    "h2": "Entre em contato comigo",
-    "h3": "Atualmente estou em busca de novas oportunidades e minha caixa de entrada está aberta.",
+    "h1": "Vamos trabalhar juntos",
+    "h2": "Entre em contato",
+    "h3": "Escolha a melhor forma de contato e vamos conversar sobre seu projeto.",
+    "formTitle": "Envie uma mensagem",
+    "formDescription": "Prefere escrever? Preencha o formulário e responderei assim que possível.",
     "emailName": "Nome",
-    "emailAddress": "Email",
-    "emailMessage": "Mensagem"
+    "emailAddress": "E-mail",
+    "emailMessage": "Mensagem",
+    "namePlaceholder": "Como posso te chamar?",
+    "emailPlaceholder": "voce@exemplo.com",
+    "messagePlaceholder": "Conte um pouco sobre o projeto...",
+    "submit": "Enviar mensagem",
+    "sending": "Enviando...",
+    "footer": "Respondo normalmente em até 24 horas • Disponível para oportunidades",
+    "validation": {
+      "required": "Este campo é obrigatório.",
+      "email": "Digite um e-mail válido."
+    },
+    "status": {
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Ocorreu um erro ao enviar a mensagem."
+    },
+    "options": {
+      "cal": {
+        "title": "Agendar uma conversa",
+        "description": "Vamos falar sobre código, projetos ou oportunidades",
+        "unavailable": "Em breve",
+        "ariaLabel": "Agendar uma conversa"
+      },
+      "email": {
+        "title": "Enviar um e-mail",
+        "description": "Para propostas, dúvidas ou colaborações",
+        "ariaLabel": "Enviar um e-mail"
+      },
+      "linkedin": {
+        "title": "Conectar no LinkedIn",
+        "description": "Acompanhe minha trajetória profissional",
+        "ariaLabel": "Conectar no LinkedIn em uma nova aba"
+      }
+    }
+  },
+  "Footer": {
+    "linksLabel": "Links de contato",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-mail"
   }
 }
