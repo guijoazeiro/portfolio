@@ -5,6 +5,7 @@ import { Link, usePathname, useRouter } from "@/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type Locale = "pt" | "en";
+type ScrollDirection = "up" | "down";
 type SectionKey =
   | "home"
   | "stack"
@@ -31,6 +32,12 @@ const sectionIds: Record<SectionKey, string> = {
   contact: "contact",
 };
 
+const NAVBAR_DIRECTION_THRESHOLD = 1;
+const NAVBAR_HIDE_DISTANCE = 20;
+const NAVBAR_SHOW_DISTANCE = 7;
+const NAVBAR_ALWAYS_VISIBLE_UNTIL = 64;
+const NAVBAR_REVEAL_LOCK_MS = 350;
+
 export default function Navbar() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -38,6 +45,8 @@ export default function Navbar() {
   const t = useTranslations("Navbar");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const previousScrollYRef = useRef(0);
+  const scrollDirectionRef = useRef<ScrollDirection | null>(null);
+  const scrollDistanceRef = useRef(0);
   const scrollFrameRef = useRef<number | null>(null);
   const isMenuOpenRef = useRef(false);
   const revealLockUntilRef = useRef(0);
@@ -47,11 +56,11 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<SectionKey>("home");
 
   useEffect(() => {
-    const directionThreshold = 14;
-    const alwaysVisibleUntil = 96;
     const initialScrollY = window.scrollY;
 
     previousScrollYRef.current = initialScrollY;
+    scrollDirectionRef.current = null;
+    scrollDistanceRef.current = 0;
     setIsScrolled(initialScrollY > 16);
 
     const handleScroll = () => {
@@ -67,16 +76,34 @@ export default function Navbar() {
 
         if (
           isMenuOpenRef.current ||
-          currentScrollY <= alwaysVisibleUntil ||
+          currentScrollY <= NAVBAR_ALWAYS_VISIBLE_UNTIL ||
           Date.now() < revealLockUntilRef.current
         ) {
+          scrollDirectionRef.current = null;
+          scrollDistanceRef.current = 0;
           setIsNavbarHidden(false);
           return;
         }
 
-        if (Math.abs(scrollDelta) < directionThreshold) return;
+        if (Math.abs(scrollDelta) < NAVBAR_DIRECTION_THRESHOLD) return;
 
-        setIsNavbarHidden(scrollDelta > 0);
+        const direction: ScrollDirection = scrollDelta > 0 ? "down" : "up";
+        if (scrollDirectionRef.current !== direction) {
+          scrollDirectionRef.current = direction;
+          scrollDistanceRef.current = 0;
+        }
+
+        scrollDistanceRef.current += Math.abs(scrollDelta);
+        const stateChangeDistance =
+          direction === "down"
+            ? NAVBAR_HIDE_DISTANCE
+            : NAVBAR_SHOW_DISTANCE;
+
+        if (scrollDistanceRef.current < stateChangeDistance) return;
+
+        setIsNavbarHidden(direction === "down");
+        scrollDirectionRef.current = null;
+        scrollDistanceRef.current = 0;
       });
     };
 
@@ -157,7 +184,9 @@ export default function Navbar() {
   }
 
   function revealNavbarForInteraction() {
-    revealLockUntilRef.current = Date.now() + 800;
+    revealLockUntilRef.current = Date.now() + NAVBAR_REVEAL_LOCK_MS;
+    scrollDirectionRef.current = null;
+    scrollDistanceRef.current = 0;
     setIsNavbarHidden(false);
   }
 
