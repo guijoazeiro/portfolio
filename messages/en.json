@@ -5,11 +5,6 @@
       "href": "/",
       "text": "Home"
     },
-    "about": {
-      "id": 2,
-      "href": "#about",
-      "text": "About"
-    },
     "skills": {
       "id": 3,
       "href": "#stack",
@@ -80,10 +75,6 @@
     "projects": "Available projects:",
     "skills": "Main stack:",
     "invalidCommand": "Invalid command. Type help to see the commands."
-  },
-  "About": {
-    "h1": "About",
-    "p1": "Backend Engineer with 3+ years building REST APIs, microservices and scalable systems with Node.js, TypeScript, Python, Java and Go. I work end-to-end — from architecture and data modeling to AWS deploys, CI/CD and automations — with a focus on performance, security and code quality."
   },
   "Skills": {
     "h1": "Stack"
