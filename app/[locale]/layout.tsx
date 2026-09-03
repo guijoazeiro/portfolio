@@ -119,7 +119,7 @@ export default async function RootLayout({
           <AnimatedBackground />
           <Navbar />
           <div className="relative z-10 min-h-screen text-gray-300 fade-in">
-            <div className="max-w-[760px] mx-auto px-4 sm:px-6 md:px-8 pt-24 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
+            <div className="site-shell pt-24 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16">
               {children}
               <Footer />
             </div>
